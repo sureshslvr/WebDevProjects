@@ -47,66 +47,194 @@
 
 
 ========================================================================
-day 4
-Image tag: its a self closing tag
-<img scr="" alt="">
-src and alt are attributes, alt is used to display text when src not found
+day 4...........
 
-anchor tag:
-it is used to provide url and link it to the text
-<a href="https://www.facebook.com" target="_blank">Facebook<a/>
-target attribute used to redirect the link in diff tab instead of openingi same tab
+## **1. Image Tag**
 
-<a href="#section1">go to section</a>
+* `<img>` is a **self-closing tag**.
+* Attributes:
+
+  * `src` → path to the image file
+  * `alt` → alternate text shown if the image is not found
+
+```html
+<img src="image.jpg" alt="Description of image">
+```
+
+---
+
+## **2. Anchor Tag (`<a>`)**
+
+* Used to **link to webpages, sections, or internal pages**.
+* Attributes:
+
+  * `href` → URL or section id
+  * `target="_blank"` → opens link in a new tab
+
+```html
+<a href="https://www.facebook.com" target="_blank">Facebook</a>
+<a href="#section1">Go to Section</a>
 <p id="section1"></p>
-used to link/redirect to webpage,internal html pages, or section of same page
+```
 
-block vs Inline elements
-- inline elements are take the space/width needed only
-- block elements take whole width of browser space of line 
+---
 
-semantic tags:
-these tags add a meaning to the code and also for the readability
-ex: header,footer,aside,sidebar,section,main
+## **3. Block vs Inline Elements**
 
-To add Copyright symbol we can use them with &symbol name
-<p>&copy;</p>
+| Type   | Behavior                                  | Examples                                                |
+| ------ | ----------------------------------------- | ------------------------------------------------------- |
+| Block  | Takes full width, starts on a new line    | `<div>`, `<p>`, `<h1>`–`<h6>`, `<section>`, `<article>` |
+| Inline | Takes width as needed, stays in same line | `<span>`, `<a>`, `<img>`, `<input>`                     |
 
-tables:
-<table> </table>
-<caption> is for title
-<tr> for table row
-<th> for table head
-<td> for table data
-<td colspan=2> for merging columns
+> **Tip:** Inline-block elements behave like inline but allow width & height (e.g., `<button>`, `<img>`).
 
-===================================================================
-day5
+---
 
-form tag:
-form is used to get/extract the data from the users
-we can take diff type of inputs using form
+## **4. Semantic Tags**
 
-action is once submitted form where it need to redirect
-method is rest api actions like post,get,delete,update
+* Provide meaning to content for **readability and SEO**.
+* Examples: `<header>`, `<footer>`, `<section>`, `<main>`, `<aside>`, `<nav>`
 
-<form action="" method=""> 
-	<input type="">
+---
+
+## **5. Special Characters**
+
+* Use HTML entities to display special characters.
+
+```html
+<p>&copy; 2025 Your Name</p>
+<p>&reg; Registered Trademark</p>
+<p>&hearts; Heart symbol</p>
+```
+
+---
+
+## **6. Tables**
+
+* Structure tabular data.
+
+```html
+<table>
+  <caption>Employee Details</caption>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Department</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>25</td>
+    <td>Marketing</td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td colspan="2">HR & Admin</td>
+  </tr>
+</table>
+```
+
+* `<caption>` → table title
+* `<tr>` → table row
+* `<th>` → table header
+* `<td>` → table data
+* `colspan` → merge multiple columns
+
+---
+============================================================
+day 5..........
+
+## **7. Forms (`<form>`)**
+
+* Used to **collect data from users**.
+* Attributes:
+
+  * `action` → URL or page where form submits
+  * `method` → GET, POST, DELETE, UPDATE
+
+```html
+<form action="submit.php" method="post">
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+  <input type="radio" name="gender" value="male"> Male
+  <input type="radio" name="gender" value="female"> Female
+  <input type="checkbox" name="agree"> I agree
+  <input type="file" accept="image/*">
+  <button type="submit">Submit</button>
 </form>
-input,plaseholder,button
+```
 
-type text is anything
-type password is in hidden format
-type radio button should maintain same name to make sense
-Lable tag for attribute and id in input
-check box
+---
 
+## **8. Input Types**
 
-div tag
-task: 
-1.create a login page
-2.signup page where user can register
-3.file uploading should accept only image files
+| Type     | Purpose                                      |
+| -------- | -------------------------------------------- |
+| text     | Free text input                              |
+| password | Hidden input                                 |
+| radio    | Select one option (same `name` for group)    |
+| checkbox | Select multiple options                      |
+| file     | Upload files (`accept="image/*"` for images) |
+| email    | Email input                                  |
+| number   | Numeric input                                |
+| date     | Date picker                                  |
+| color    | Color picker                                 |
+| url      | Web address                                  |
+| tel      | Telephone number                             |
+| range    | Slider control                               |
 
-======================================================
+* **Label tag:** Use `<label for="id">` for accessibility
 
+```html
+<label for="username">Username:</label>
+<input type="text" id="username">
+```
+
+---
+
+## **9. Div Tag (`<div>`)**
+
+* Used to **group elements** and structure content.
+* Commonly used with forms and layout sections.
+
+---
+
+## **10. Media Tags**
+
+* **Video Tag**
+
+```html
+<video width="400" controls>
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+```
+
+* **Audio Tag**
+
+```html
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+```
+
+* Attributes: `controls`, `autoplay`, `loop`, `muted`
+
+---
+
+## **11. Remaining 10% (Optional but Useful HTML Topics)**
+
+1. **Textarea** → Multi-line input
+2. **Select & Option** → Dropdown lists
+3. **Fieldset & Legend** → Group form elements
+4. **Datalist** → Suggestions for input fields
+5. **Iframe** → Embed another webpage
+
+```html
+<iframe src="https://www.example.com" width="400" height="300"></iframe>
+```
+
+6. **Form Validation Attributes** → `required`, `maxlength`, `pattern`, `readonly`, `disabled`
+7. **HTML5 Semantic Elements for Multimedia** → `<figure>` & `<figcaption>`
+
+==========================================================================================
