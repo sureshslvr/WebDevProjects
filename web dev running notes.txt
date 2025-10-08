@@ -1,0 +1,112 @@
+# Basic Web Development Notes:
+
+## 1. Tools for Coding
+- **VS Code Extensions:**
+  - **Live Server:** Shows your webpage updates instantly when you save.
+  - **Prettier:** Automatically arranges your code to look neat and easy to read.
+
+## 2. HTML Structure Basics
+- Every HTML page starts with `<!DOCTYPE html>` which tells the browser to expect an HTML5 document.
+- An HTML document mainly contains **two parts**:
+  - `<head>`: Hidden part for metadata, like page title and SEO info.
+  - `<body>`: The visible part shown on the website.
+- To quickly create a basic webpage in VS Code, type `!` or `html:5` and press Enter.
+
+## 3. What Are Tags?
+- Think of tags as special labels in **angled brackets `< >`** used to tell the browser how to display content.
+- Tags usually come in pairs:
+  - **Opening tag**: `<tagname>`
+  - **Closing tag**: `</tagname>`
+- Some tags are **self-closing**, meaning they don’t need a closing tag, like `<br>`, `<hr>`, and `<img>`.
+
+## 4. Important Tags to Know
+- **Headings:** `<h1>` to `<h6>`
+  - `<h1>` is the biggest heading; `<h6>` is the smallest.
+- **Paragraph:** `<p>` wraps blocks of text.
+- **Text Style:**
+  - `<b>` makes text bold.
+  - `<i>` makes text italic.
+- **Special Formatting:**
+  - `<sup>` for superscript (e.g., 2<sup>2</sup> means 2 squared).
+  - `<sub>` for subscript (e.g., H<sub>2</sub>O).
+- **Line Break:** `<br>` starts a new line without adding extra space like paragraphs.
+- **Horizontal Line:** `<hr>` draws a dividing line.
+
+## 5. Lists
+- **Ordered List (`<ol>`):** Numbered list — each item inside `<li>`.
+- **Unordered List (`<ul>`):** Bulleted list — each item inside `<li>`.
+
+## 6. Metadata and SEO in `<head>`
+- `<meta>` tags provide information such as page description and keywords to help search engines understand your page.
+- The `<title>` tag sets the page’s name shown on the browser tab.
+
+## 7. Learning Resources
+- For detailed info, examples, and exploring new HTML tags, use [MDN Web Docs](https://developer.mozilla.org).
+
+***
+
+
+========================================================================
+day 4
+Image tag: its a self closing tag
+<img scr="" alt="">
+src and alt are attributes, alt is used to display text when src not found
+
+anchor tag:
+it is used to provide url and link it to the text
+<a href="https://www.facebook.com" target="_blank">Facebook<a/>
+target attribute used to redirect the link in diff tab instead of openingi same tab
+
+<a href="#section1">go to section</a>
+<p id="section1"></p>
+used to link/redirect to webpage,internal html pages, or section of same page
+
+block vs Inline elements
+- inline elements are take the space/width needed only
+- block elements take whole width of browser space of line 
+
+semantic tags:
+these tags add a meaning to the code and also for the readability
+ex: header,footer,aside,sidebar,section,main
+
+To add Copyright symbol we can use them with &symbol name
+<p>&copy;</p>
+
+tables:
+<table> </table>
+<caption> is for title
+<tr> for table row
+<th> for table head
+<td> for table data
+<td colspan=2> for merging columns
+
+===================================================================
+day5
+
+form tag:
+form is used to get/extract the data from the users
+we can take diff type of inputs using form
+
+action is once submitted form where it need to redirect
+method is rest api actions like post,get,delete,update
+
+<form action="" method=""> 
+	<input type="">
+</form>
+input,plaseholder,button
+
+type text is anything
+type password is in hidden format
+type radio button should maintain same name to make sense
+Lable tag for attribute and id in input
+check box
+
+
+div tag
+task: 
+1.create a login page
+2.signup page where user can register
+3.file uploading should accept only image files
+
+======================================================
+

@@ -1,0 +1,4 @@
+task: 
+1.create a login page
+2.signup page where user can register
+3.file uploading should accept only image files
