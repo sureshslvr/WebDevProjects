@@ -1,3 +1,6 @@
+====================================
+        HTML
+====================================
 # Basic Web Development Notes:
 
 ## 1. Tools for Coding
@@ -222,19 +225,398 @@ day 5..........
 
 ---
 
-## **11. Remaining 10% (Optional but Useful HTML Topics)**
+# 🧩 **Remaining HTML Topics (Day 5 - Advanced Basics)**
 
-1. **Textarea** → Multi-line input
-2. **Select & Option** → Dropdown lists
-3. **Fieldset & Legend** → Group form elements
-4. **Datalist** → Suggestions for input fields
-5. **Iframe** → Embed another webpage
+---
+
+## **1. `<textarea>` – Multi-line Input Field**
+
+Used when users need to enter **long text** such as comments, descriptions, or messages.
+
+### Example:
 
 ```html
-<iframe src="https://www.example.com" width="400" height="300"></iframe>
+<form>
+  <label for="message">Your Message:</label><br>
+  <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..."></textarea>
+</form>
 ```
 
-6. **Form Validation Attributes** → `required`, `maxlength`, `pattern`, `readonly`, `disabled`
-7. **HTML5 Semantic Elements for Multimedia** → `<figure>` & `<figcaption>`
+### Key Points:
 
-==========================================================================================
+* Supports **multiple lines** of text.
+* Attributes:
+
+  * `rows` → number of visible text lines.
+  * `cols` → width of the textarea.
+  * `placeholder` → hint text.
+  * You can also make it **non-resizable** using CSS (`resize: none;`).
+
+---
+
+## **2. `<select>` and `<option>` – Dropdown List**
+
+Used to create a **drop-down menu** where users can choose one (or multiple) options.
+
+### Example:
+
+```html
+<form>
+  <label for="country">Select Country:</label>
+  <select id="country" name="country">
+    <option value="india">India</option>
+    <option value="usa">USA</option>
+    <option value="uk">UK</option>
+    <option value="australia">Australia</option>
+  </select>
+</form>
+```
+
+### Key Points:
+
+* Each `<option>` inside `<select>` represents one item.
+* To allow **multiple selections**, add `multiple`:
+
+  ```html
+  <select multiple>
+  ```
+* Use `selected` attribute to set default value.
+
+---
+
+## **3. `<fieldset>` and `<legend>` – Group Related Form Fields**
+
+Used to **group related inputs together** for better organization and readability.
+
+### Example:
+
+```html
+<form>
+  <fieldset>
+    <legend>Personal Information</legend>
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email">
+  </fieldset>
+</form>
+```
+
+### Key Points:
+
+* `<fieldset>` draws a box around related form elements.
+* `<legend>` acts as a **title** or **label** for that group.
+
+---
+
+## **4. `<datalist>` – Input Suggestions**
+
+Used to **provide predefined suggestions** to an `<input>` field while still allowing free text input.
+
+### Example:
+
+```html
+<form>
+  <label for="browser">Choose your browser:</label>
+  <input list="browsers" id="browser" name="browser">
+  <datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Edge">
+    <option value="Safari">
+    <option value="Opera">
+  </datalist>
+</form>
+```
+
+### Key Points:
+
+* Works with `<input list="id">`
+* User can either **type freely** or **choose from list**.
+* Helpful for **search boxes or quick forms**.
+
+---
+
+## **5. `<iframe>` – Embed External Webpages**
+
+Used to **embed another webpage or content** (like YouTube videos, maps, etc.) inside your page.
+
+### Example:
+
+```html
+<iframe src="https://www.example.com" width="400" height="300" title="Example Website"></iframe>
+```
+
+### Key Points:
+
+* Common uses: embedding **YouTube videos**, **Google Maps**, or **external tools**.
+* Important attributes:
+
+  * `src` → source URL
+  * `width`, `height` → size
+  * `title` → accessibility
+  * `frameborder="0"` → remove border
+  * `allowfullscreen` → for videos
+
+---
+
+## **6. Form Validation Attributes**
+
+These attributes ensure users **enter valid data** before submitting a form.
+
+| Attribute     | Description              | Example                                      |
+| ------------- | ------------------------ | -------------------------------------------- |
+| `required`    | Field must be filled     | `<input type="text" required>`               |
+| `maxlength`   | Limit characters         | `<input type="text" maxlength="10">`         |
+| `pattern`     | Accepts regex patterns   | `<input type="text" pattern="[A-Za-z]{3,}">` |
+| `readonly`    | Visible but not editable | `<input type="text" value="Fixed" readonly>` |
+| `disabled`    | Grayed out and skipped   | `<input type="text" disabled>`               |
+| `min` / `max` | Numeric range limits     | `<input type="number" min="1" max="100">`    |
+
+> 💡 **Tip:** Browser automatically validates `email`, `url`, `number`, etc. based on input type.
+
+---
+
+## **7. HTML5 Semantic Elements for Multimedia**
+
+Helps describe **media content** meaningfully — improves **SEO and accessibility**.
+
+### Example:
+
+```html
+<figure>
+  <img src="nature.jpg" alt="Beautiful Nature">
+  <figcaption>Fig 1: A scenic mountain view at sunrise.</figcaption>
+</figure>
+```
+
+### Key Points:
+
+* `<figure>` wraps an image, chart, video, etc.
+* `<figcaption>` adds a caption or description.
+* Keeps images and captions **semantically linked**.
+
+---
+
+====================================
+        CSS
+====================================
+---
+css day1
+---
+
+## **1. What is CSS?**
+
+CSS (Cascading Style Sheets) is used to **add colors, layout, and styling** to your HTML skeleton — it controls how the webpage looks and feels.
+
+### 💡 Example:
+
+```css
+h1 {
+  color: red;
+  background-color: yellow;
+}
+```
+
+---
+
+## **2. CSS Syntax**
+
+Each CSS rule follows this structure:
+
+```css
+selector {
+  property: value;
+}
+```
+
+### Example:
+
+```css
+p {
+  font-size: 16px;
+  color: blue;
+}
+```
+
+✅ **Selector** → targets which HTML element to style
+✅ **Property** → defines what to change
+✅ **Value** → defines how to change it
+
+---
+
+## **3. How to Add CSS to a Webpage**
+
+There are **3 types of CSS**:
+
+### 🟢 1. Inline CSS
+
+CSS is written **directly inside the HTML tag** using the `style` attribute.
+
+```html
+<h1 style="color: red; background-color: yellow;">Inline CSS Example</h1>
+```
+
+🔸 Used for **quick fixes**
+🔸 ❌ Not recommended for large projects
+
+---
+
+### 🟣 2. Internal CSS
+
+CSS is written **inside the `<style>` tag** within the `<head>` section of the HTML file.
+
+```html
+<head>
+  <style>
+    h1 {
+      color: blue;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+```
+
+🔸 Useful for **small webpages or testing**
+🔸 Affects only that single HTML file
+
+---
+
+### 🔵 3. External CSS
+
+CSS is written in a **separate `.css` file** and linked to the HTML file using `<link>` tag in `<head>`.
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+```css
+/* style.css */
+h1 {
+  color: green;
+  background-color: beige;
+}
+```
+
+✅ **Best Practice** → Used in **real-world projects** for better structure and reusability.
+
+---
+
+## **4. Types of CSS Selectors**
+
+Selectors decide **which HTML element(s)** will be styled.
+
+### 🔹 1. Universal Selector
+
+Applies styles to **all elements** on the page.
+
+```css
+* {
+  font-family: Arial, sans-serif;
+  color: darkgray;
+}
+```
+
+---
+
+### 🔹 2. Element Selector
+
+Targets a **specific HTML tag**.
+
+```css
+h1 {
+  color: red;
+}
+p {
+  font-size: 18px;
+}
+```
+
+---
+
+### 🔹 3. Class Selector
+
+Used to style **multiple elements** that share the same class.
+
+```html
+<h1 class="title">Welcome</h1>
+<p class="title">This is CSS Class Example</p>
+```
+
+```css
+.title {
+  color: blue;
+  text-align: center;
+}
+```
+
+🔸 Prefix class selectors with a **dot (.)**
+🔸 A class **can be reused** multiple times
+
+---
+
+### 🔹 4. ID Selector
+
+Used to style a **unique element** with a specific `id`.
+
+```html
+<h1 id="main-heading">Hello World</h1>
+```
+
+```css
+#main-heading {
+  color: purple;
+  background-color: lightblue;
+}
+```
+
+🔸 Prefix id selectors with a **hash (#)**
+🔸 **ID must be unique** — used for one specific element
+
+---
+
+## **5. Selector Priority (Specificity Order)**
+
+When multiple selectors target the same element, the **priority order** decides which style applies.
+
+| Priority   | Selector Type      | Example          | Symbol |
+| ---------- | ------------------ | ---------------- | ------ |
+| 🥇 Highest | ID Selector        | `#idname`        | `#`    |
+| 🥈 Second  | Class Selector     | `.classname`     | `.`    |
+| 🥉 Third   | Element Selector   | `p`, `h1`, `div` | —      |
+| 🏅 Lowest  | Universal Selector | `*`              | `*`    |
+
+### Example:
+
+```css
+* { color: blue; }
+h1 { color: green; }
+.nani { color: orange; }
+#name { color: red; }
+```
+
+Result → If all apply to one element, **red** (ID selector) wins.
+
+---
+
+## **6. Linking External CSS**
+
+To connect your external CSS file to your HTML:
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+✅ Place inside `<head>`
+✅ File extension must be `.css`
+
+---
+
+## **7. CSS Naming Tip**
+
+When naming classes and IDs, use **meaningful names**:
+
+* ✅ `.header`, `.main-content`, `.footer`
+* ❌ `.box1`, `.div2`, `.xyz`
+
+---
