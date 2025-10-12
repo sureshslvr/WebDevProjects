@@ -620,3 +620,86 @@ When naming classes and IDs, use **meaningful names**:
 * ❌ `.box1`, `.div2`, `.xyz`
 
 ---
+# 🎨 **CSS Day 2 – Text Styling & Colors**
+---
+
+## 💻 **1. Introduction**
+
+In today’s session, we focused on **text styling properties** and **color representations** in CSS.
+These properties help improve the readability, design, and visual hierarchy of a webpage.
+
+---
+
+## ✍️ **2. Text Styling Properties**
+
+| **Property**      | **Description**                                            | **Example**                           |
+| ----------------- | ---------------------------------------------------------- | ------------------------------------- |
+| `font-family`     | Defines the type of font or typography.                    | `font-family: 'Poppins', sans-serif;` |
+| `font-style`      | Defines the font style – *normal*, *italic*, or *oblique*. | `font-style: italic;`                 |
+| `font-weight`     | Controls how bold or light the text appears.               | `font-weight: bold;`                  |
+| `line-height`     | Adjusts the vertical spacing between lines of text.        | `line-height: 1.5;`                   |
+| `letter-spacing`  | Sets the space between each character.                     | `letter-spacing: 2px;`                |
+| `text-align`      | Aligns the text inside its container.                      | `text-align: center;`                 |
+| `text-transform`  | Controls the capitalization of text.                       | `text-transform: uppercase;`          |
+| `text-decoration` | Adds decorative lines to text.                             | `text-decoration: underline;`         |
+| `text-shadow`     | Adds shadow effects to text.                               | `text-shadow: 2px 2px 5px gray;`      |
+
+---
+
+## 🌈 **3. Color Representation in CSS**
+
+CSS allows you to add colors in multiple formats to suit different needs and design systems.
+
+| **Format**       | **Example**                    | **Description**                                    |
+| ---------------- | ------------------------------ | -------------------------------------------------- |
+| **Named Colors** | `color: red;`                  | Uses predefined color names like red, blue, green. |
+| **RGB**          | `color: rgb(255, 0, 0);`       | Red, Green, Blue values range from 0–255.          |
+| **HEX**          | `color: #ff0000;`              | Hexadecimal representation of RGB values.          |
+| **RGBA**         | `color: rgba(255, 0, 0, 0.5);` | Adds transparency (alpha value) from 0 to 1.       |
+| **HSL**          | `color: hsl(0, 100%, 50%);`    | Hue (0–360°), Saturation (%), Lightness (%).       |
+
+---
+
+## 🧠 **4. Practical Example**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Styling Example</title>
+  <style>
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ff5733;
+      text-shadow: 2px 2px 5px #999;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to CSS Styling</h1>
+  <p>Learning how to make text beautiful with CSS properties and color formats!</p>
+</body>
+</html>
+```
+
+---
+
+## 🎯 **5. Key Takeaways**
+
+✅ CSS makes your web pages visually appealing and readable.
+✅ Text styling helps create a clear content hierarchy.
+✅ Different color formats give flexibility and control in design.
+✅ Combining shadows, spacing, and fonts can greatly enhance the UI feel.
+
+---
+
+
