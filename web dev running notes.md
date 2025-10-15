@@ -703,3 +703,218 @@ CSS allows you to add colors in multiple formats to suit different needs and des
 ---
 
 
+## 🎨 **CSS Day 3 Notes – Box Model, Div Tag & Background Styling**
+
+### 📦 **1. CSS Box Model**
+
+Every HTML element is treated as a rectangular box.
+It defines how space and layout are handled in webpages.
+
+| Layer       | Description                                 |
+| ----------- | ------------------------------------------- |
+| **Content** | The actual text or image inside the box     |
+| **Padding** | Space between the content and the border    |
+| **Border**  | The visible outline around the padding      |
+| **Margin**  | Space between the element and its neighbors |
+
+🧩 **Example:**
+
+```css
+div {
+  width: 200px;
+  padding: 15px;
+  border: 3px solid black;
+  margin: 10px;
+}
+```
+
+---
+
+### ⚙️ **2. Box-Sizing Property**
+
+Controls how total width and height of an element are calculated.
+
+* **content-box (default):**
+  Only content area is included in width & height; padding & border add extra space.
+
+* **border-box:**
+  Includes padding & border within the defined width & height. Easier for layouts.
+
+```css
+div {
+  box-sizing: border-box;
+}
+```
+
+---
+
+### 🧱 **3. Div Tag**
+
+* `<div>` is a **block-level container** used to group HTML elements together.
+* Helps in structuring layouts and applying collective CSS styling.
+
+```html
+<div class="container">
+  <h2>My Section</h2>
+  <p>This is inside a div.</p>
+</div>
+```
+
+---
+
+### 🌆 **4. Background Styling**
+
+Adds visual appeal to webpages.
+
+| Property              | Description           | Example                             |
+| --------------------- | --------------------- | ----------------------------------- |
+| `background-color`    | Sets background color | `background-color: lightblue;`      |
+| `background-image`    | Adds image            | `background-image: url('bg.jpg');`  |
+| `background-repeat`   | Controls repetition   | `no-repeat`, `repeat-x`, `repeat-y` |
+| `background-size`     | Controls fit          | `cover`, `contain`, `100% 100%`     |
+| `background-position` | Aligns image          | `center`, `top left`                |
+
+---
+
+### 🌈 **5. CSS Gradients**
+
+Used to create smooth color transitions.
+
+**Linear Gradient:**
+
+```css
+background: linear-gradient(to right, blue, green);
+```
+
+**Radial Gradient:**
+
+```css
+background: radial-gradient(circle, orange, white);
+```
+
+---
+
+✅ **Summary:**
+
+* Understood how box model controls element spacing.
+* Learned to use `<div>` effectively.
+* Practiced background color, images, and gradients for design.
+
+---
+
+## 💡 **CSS Day 4 Notes – Fonts, Positioning, z-index, Transform & Flexbox**
+
+### 🔤 **1. Fonts in CSS**
+
+Fonts control the appearance and readability of text.
+
+| Property      | Description         | Example                           |
+| ------------- | ------------------- | --------------------------------- |
+| `font-family` | Sets typeface       | `font-family: Arial, sans-serif;` |
+| `font-size`   | Defines size        | `font-size: 16px;`                |
+| `font-weight` | Thickness           | `font-weight: bold;`              |
+| `font-style`  | Style               | `font-style: italic;`             |
+| `line-height` | Space between lines | `line-height: 1.5;`               |
+
+💡 Tip: Use `rem` units for responsive font sizing.
+
+---
+
+### 📍 **2. Position Property**
+
+Controls how elements are placed in the layout.
+
+| Type       | Behavior                                              |
+| ---------- | ----------------------------------------------------- |
+| `static`   | Default (normal flow)                                 |
+| `relative` | Moves slightly from its normal position               |
+| `absolute` | Positions relative to nearest parent                  |
+| `fixed`    | Stays fixed while scrolling                           |
+| `sticky`   | Acts static until a certain scroll point, then sticks |
+
+🧩 **Example:**
+
+```css
+.box {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+```
+
+---
+
+### 🧱 **3. z-index (Stacking Order)**
+
+Determines which element appears on top when overlapping.
+Works only with positioned elements.
+
+```css
+.card {
+  position: relative;
+  z-index: 10;
+}
+.modal {
+  position: fixed;
+  z-index: 1000;
+}
+```
+
+---
+
+### 🔄 **4. Transform Property**
+
+Used for visual effects and animations.
+
+| Function          | Description   | Example                             |
+| ----------------- | ------------- | ----------------------------------- |
+| `translate(x, y)` | Moves element | `transform: translate(20px, 10px);` |
+| `rotate(angle)`   | Rotates       | `transform: rotate(15deg);`         |
+| `scale(x, y)`     | Resizes       | `transform: scale(1.1);`            |
+| `skew(x, y)`      | Tilts         | `transform: skew(10deg, 5deg);`     |
+
+✨ Add smooth transitions:
+
+```css
+button {
+  transition: transform 0.3s ease;
+}
+button:hover {
+  transform: scale(1.05);
+}
+```
+
+---
+
+### 🧩 **5. Flexbox (Flexible Box Layout)**
+
+Used for responsive and aligned layouts.
+
+📦 **Activate Flexbox:**
+
+```css
+.container {
+  display: flex;
+}
+```
+
+📏 **Main Properties:**
+
+| Property          | Purpose                  | Example                            |
+| ----------------- | ------------------------ | ---------------------------------- |
+| `justify-content` | Align items horizontally | `center`, `space-between`          |
+| `align-items`     | Align items vertically   | `center`, `flex-start`, `flex-end` |
+| `flex-direction`  | Row or column layout     | `row`, `column`                    |
+| `gap`             | Space between elements   | `gap: 10px;`                       |
+
+---
+
+✅ **Summary:**
+
+* Learned text styling with fonts and units.
+* Understood positioning types and stacking order.
+* Explored transform & transitions for animations.
+* Practiced Flexbox for responsive layouts.
+
+---
+
