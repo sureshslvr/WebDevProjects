@@ -1,0 +1,35 @@
+flex box:
+we have two main axises in flex
+    1.column axis(cross axis)-y axis
+    2.row/horizontal axis(main axis)-x axis
+
+display:flex 
+    to arrage the boxs in horizontal
+align-items: flex-start 
+    by defult it will be at starting only
+align-items: center
+    moves boxs to center column wise
+align-items: center
+    moves boxs to end of the column
+
+justify-content: center
+    to move boxes horizontal
+
+by defult flex direction is row we can change it to column then x-axis(main axis) and y-axis(cross axis) will be interchanged
+
+note: always remember flex properties should be applied for parent element only
+
+border: 3px dotted white
+    to apply border 
+
+gap: 20px;
+    to apply gap b/w the boxes
+
+to avoid shrinking issues:
+- we can add flex-wrap:wrap in parent so they will come in next line when the boxes reach parent limit
+- or we can add flex-wrap:nowrap in parent and flex-shrink: 0 to arrage them in single row floating in browser 
+
+
+task:
+make flipkart like carting using image and text unsing flex
+
