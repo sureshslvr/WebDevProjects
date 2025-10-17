@@ -1,0 +1,8 @@
+Tasks :-
+
+download the font style 
+how to apply color in diagonal way 
+box-model
+border styles 
+background-images 
+practice these topics by examples
