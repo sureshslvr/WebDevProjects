@@ -917,4 +917,132 @@ Used for responsive and aligned layouts.
 * Practiced Flexbox for responsive layouts.
 
 ---
+# 🌐 **CSS – Day 5: Flexbox Layout**
+
+## 🎯 **What is Flexbox?**
+
+Flexbox (**Flexible Box Layout**) is a CSS layout module that helps arrange elements easily in **rows or columns**, and distribute space **evenly** among them — making layouts more **responsive** and **clean**.
+
+---
+
+## 🧭 **Main Concepts**
+
+Flexbox works along **two axes**:
+
+* **Main Axis (Horizontal / X-axis)** → controlled by `justify-content`
+* **Cross Axis (Vertical / Y-axis)** → controlled by `align-items`
+
+---
+
+## ⚙️ **Basic Setup**
+
+To use Flexbox, set the parent container to:
+
+```css
+.container {
+  display: flex;
+}
+```
+
+This makes all direct child elements **flex items**.
+
+---
+
+## 🧩 **Core Flexbox Properties**
+
+### 🔹 **1. justify-content (Main Axis Alignment)**
+
+Aligns flex items **horizontally**.
+
+```css
+justify-content: flex-start; /* Default - items start from left */
+justify-content: center;     /* Items move to center horizontally */
+justify-content: flex-end;   /* Items move to right */
+justify-content: space-between; /* Equal space between items */
+justify-content: space-around;  /* Equal space around each item */
+```
+
+---
+
+### 🔹 **2. align-items (Cross Axis Alignment)**
+
+Aligns items **vertically** (along the cross axis).
+
+```css
+align-items: flex-start;  /* Top aligned */
+align-items: center;      /* Vertically centered */
+align-items: flex-end;    /* Bottom aligned */
+```
+
+---
+
+### 🔹 **3. flex-direction**
+
+Defines the **direction** of the main axis.
+
+```css
+flex-direction: row;    /* Default – horizontal */
+flex-direction: column; /* Vertical – main and cross axis swap */
+```
+
+---
+
+### 🔹 **4. flex-wrap**
+
+Prevents elements from shrinking when they exceed container width.
+
+```css
+flex-wrap: wrap;   /* Moves extra items to the next line */
+flex-wrap: nowrap; /* Keeps items in one line */
+```
+
+---
+
+### 🔹 **5. gap**
+
+Adds spacing between flex items.
+
+```css
+gap: 20px;
+```
+
+---
+
+### 🔹 **6. border & background**
+
+Used to add design and visual boundaries.
+
+```css
+border: 3px dotted white;
+background-color: lightblue;
+```
+
+---
+
+## 🚫 **Avoiding Shrinking Issues**
+
+When items shrink undesirably:
+
+* Use `flex-wrap: wrap;` on the parent
+* Or set `flex-shrink: 0;` on child elements
+
+---
+
+## 🧱 **Important Note**
+
+All Flexbox properties like `justify-content`, `align-items`, and `gap` should always be applied to the **parent container**, not the individual boxes.
+
+---
+
+## 🧩 **Task Practiced**
+
+🛒 Created an **Amazon-like product cart** using images and text:
+
+* Used `display: flex;` for horizontal arrangement
+* Applied `gap`, `justify-content`, and `align-items` for spacing and alignment
+* Ensured responsiveness with `flex-wrap`
+
+---
+
+
 

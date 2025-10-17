@@ -31,5 +31,5 @@ to avoid shrinking issues:
 
 
 task:
-make flipkart like carting using image and text unsing flex
+make amazon like carting using image and text unsing flex
 
