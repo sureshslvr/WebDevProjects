@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: #111;
+}
+button:hover{
+    color:red;
+    background-color: green;
+}
+
+input:focus{
+    color: red;
+}
+li::before{
+    content: " welcome ";
+}
+button{
+    background-color: red;
+    color: black;
+    transition: all ease-in-out 1s;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background-color: red;
+    animation: wow 10s cubic-bezier(0.19, 1, 0.22, 1) 2s 3 both alternate;
+}
+@keyframes wow {
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: green;
+    }
+}
+.box:hover{
+    transform: scale(0.8);
+    cursor: pointer;
+}
