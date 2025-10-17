@@ -1,0 +1,96 @@
+pseudo class and transitions and animations:
+pseudo class:
+hover is a pseudo property and works when you mouse hover the property
+button:hover{
+}
+
+to focus the input text given by the user we use focus
+input:focus{
+    color: red;
+}
+
+to add some content after li we can use this property
+li::after{
+    content: " welcome";
+}
+Note: whenever we use before or after we need to use content tag
+
+transitions:
+changing one state/position to another state/position
+
+to chage button transition slowly we can do like this
+button{
+    background-color: red;
+    color: black;
+    transition: all linear 1s;
+}
+
+all-for all properties
+linear- transition will happen line 
+
+transition: all cubic-bezier() 1s;
+transition: all ease-in 1s;
+transition: all ease-out 1s;
+transition: all ease-in-out 1s;
+transition: background-color ease-in-out 1s;
+
+
+to move box in x-axis and y-axis from top left edge 100px in this example
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transform: translate(100px,100px);
+}
+
+transform: rotate(30deg);
+    rotates 30 degrees from center
+
+ transform: scale(3.5);
+    to increase the size the of the box, defaults is 1, and it will be calculated like this
+    1-100%
+    1.5-150%
+    0.5-50%
+    0.3-30%
+
+to make box when we hover on the box
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+.box:hover{
+    transform: scale(0.8);
+}
+
+to move box in x-axis and y-axis we can use skew property
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background-color: red;
+    transform: skew(10deg,20deg);
+}
+
+animations:
+whenever we writing animations we need keep a name for animation using below syntax
+
+@keyframes animationname{ key:value}
+
+example:
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    background-color: red;
+    animation: wow 5s cubic-bezier(0.19, 1, 0.22, 1) 1s 10 normal both;
+}
+@keyframes wow {
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: green;
+    }
+}
