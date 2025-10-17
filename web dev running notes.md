@@ -1044,5 +1044,164 @@ All Flexbox properties like `justify-content`, `align-items`, and `gap` should a
 
 ---
 
+## 📘 **Notes – CSS Day 6 (Pseudo-Classes, Transitions & Animations)**
+
+### 🧩 **Pseudo-Classes**
+
+Used to style elements based on user actions or element state.
+
+```css
+button:hover { background-color: blue; color: white; }
+input:focus { border-color: red; }
+li::after { content: " welcome"; }
+```
+
+* `:hover` → when user moves mouse over element
+* `:focus` → when element is active (e.g., input box clicked)
+* `::before` / `::after` → adds content before or after (requires `content` property)
+
+---
+
+### 🎞 **Transitions**
+
+Used to make property changes happen smoothly (animated style changes).
+Syntax:
+
+```css
+transition: property duration timing-function delay;
+```
+
+Examples:
+
+```css
+button {
+  background-color: red;
+  color: black;
+  transition: all linear 1s;
+}
+button:hover {
+  background-color: green;
+}
+```
+
+**Common timing functions:**
+
+* `linear` → constant speed
+* `ease-in` → starts slow
+* `ease-out` → ends slow
+* `ease-in-out` → slow start and end
+* `cubic-bezier()` → custom motion
+
+---
+
+### 🔄 **Transform Property**
+
+Used to move, rotate, resize, or skew elements.
+
+```css
+transform: translate(100px, 100px); /* move */
+transform: rotate(30deg);           /* rotate */
+transform: scale(1.5);              /* resize */
+transform: skew(10deg, 20deg);      /* tilt */
+```
+
+---
+
+### 🌈 **Animations**
+
+Used to define complex movement or style changes over time.
+Syntax:
+
+```css
+animation: name duration timing-function delay iteration-count direction fill-mode;
+```
+
+Example:
+
+```css
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  animation: wow 5s ease-in-out infinite;
+}
+@keyframes wow {
+  from { background-color: red; }
+  to { background-color: green; }
+}
+---
+
+### 📘 **CSS Day 7 – Units & Practice Task**
+
+#### 🧠 **Topic Covered: CSS Units**
+
+CSS units define how size and spacing are measured in a webpage. They help in creating flexible, consistent, and responsive layouts.
+
+---
+
+### 🔹 **Types of CSS Units**
+
+#### **1. Absolute Units**
+
+* **px (pixels)** – Fixed-size unit.
+  Example: `width: 200px;` → Always 200 pixels wide, regardless of screen size.
+
+#### **2. Relative Units**
+
+Units that depend on another value (like the parent element or viewport).
+
+**a. % (Percentage)**
+
+* Relative to the parent element.
+  Example:
+  If parent width = 200px and child = `width: 50%;` → Child = 100px.
+* Recommended for responsive layouts.
+
+**b. em & rem**
+
+* **1em = 16px (by default)**
+* **em** – Depends on **parent’s font size**
+* **rem** – Depends on **root (HTML tag)** font size
+  Example:
+  If parent font-size = 50px → `2em = 100px`
+  If root font-size = 16px → `2rem = 32px`
+
+**c. vh / vw (Viewport Height & Width)**
+
+* **1vh = 1% of viewport height**
+* **1vw = 1% of viewport width**
+* Used for full-screen responsive designs.
+  Example:
+  `height: 100vh;` → Element takes full screen height.
+  `width: 100vw;` → Element takes full screen width.
+
+---
+
+### 💡 **Best Practice**
+
+✅ Use `%`, `em`, `rem`, `vh`, and `vw` for responsive design.
+❌ Avoid using only `px` for layouts – it doesn’t scale across devices.
+
+---
+
+### 🧩 **Self-Practice Task**
+
+**Goal:** Build a simple, single-page “Product Showcase” webpage applying all learned concepts so far.
+
+#### **Concepts Used:**
+
+* HTML structure (head, body, headings, paragraphs)
+* Images with alt text
+* Anchors (internal & external)
+* Forms (search/contact)
+* CSS Selectors (universal, element, class, id)
+* Box Model (margin, padding, border, box-sizing)
+* Units (px, %, em, rem, vh, vw)
+* Flexbox (display: flex, gap, flex-wrap, justify-content, align-items)
+* Animations for visual effects
+
+---
+
+
 
 

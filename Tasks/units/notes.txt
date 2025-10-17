@@ -1,0 +1,14 @@
+Units:
+
+if parent is 200 px and we say 50% width for child it will consder 100px
+
+phone and browser space is different to satisfy the responsiveness we can give in % instead of px always in child
+
+viewput height/width: 100vh and 100vw are used for body 
+
+em,rem
+1em=1rem=16px default
+if parent is 50px the 2em is 100px
+
+em is depend on parent
+rem dependon html tag

@@ -1,0 +1,99 @@
+Project: Product Showcase (single-page practice)
+
+Goal
+Build a simple, single-page "Product Showcase" that uses only the HTML and CSS topics you've learned so far. This project practices:
+- HTML structure and common tags (head, body, headings, paragraphs)
+- Images with meaningful alt text
+- Anchors (external and internal)
+- A basic form (search/contact) with labels and different input types
+- CSS selectors (universal, element, class, id)
+- Box model (margin, padding, border, box-sizing)
+- Units: px, %, em, rem, vw, vh
+- Flexbox for layout (display:flex, gap, flex-wrap, justify-content, align-items)
+
+What NOT to include
+- JavaScript, animations, CSS grid, advanced selectors, or server-side code
+
+Files to create
+- `Tasks/SelfTask/product-showcase.html`  — the page
+- `Tasks/SelfTask/product-showcase.css`   — stylesheet linked from the HTML
+
+Step-by-step guide (follow these steps in order)
+
+1) Create the HTML skeleton
+	 - Create `product-showcase.html` and add:
+		 - `<!DOCTYPE html>`, `<html>`, `<head>` with a `<title>` and a `<link rel="stylesheet" href="product-showcase.css">`, and `<body>`.
+	 - Add a top-level `<div id="page">` to wrap the page (optional).
+
+2) Build the header (logo, search form, nav links)
+	 - Inside `<body>` add a header container `<div id="header">`.
+	 - Add a logo image: `<img src="<choose Unsplash url>" alt="Logo">` (use an Unsplash link so it loads online).
+	 - Add a simple search form:
+		 - `<form action="#" class="search-form">` with an `<input type="search" placeholder="Search products">` and a `<button type="submit">Search</button>`.
+	 - Add nav links using anchors: one external (`target="_blank"`) and one internal that links to the contact form later (use `href="#contact"`).
+
+3) Add the page title / intro
+	 - Add a `<div id="intro">` with an `<h1>` and a short `<p>` describing the sale or showcase.
+
+4) Create the product grid using flexbox
+	 - Add a container `<div class="product-grid">`.
+	 - Inside it, add 6 product cards. Each card structure (use only divs and headings):
+		 <div class="product">
+			 <div class="product-image"><img src="<Unsplash image>" alt="Product name"></div>
+			 <div class="product-body">
+				 <h2 class="product-title">Product Name</h2>
+				 <p class="product-price">₹1,999</p>
+			 </div>
+		 </div>
+	 - Use different Unsplash seeded image URLs for each product (they load online). Keep product names descriptive.
+
+5) Add a contact form at the bottom
+	 - Add `<div id="contact">` with a small form using: text, email, textarea, and a submit button. Use `<label for="...">` for every input and set `required` for at least email and message.
+
+6) Create the CSS (`product-showcase.css`) with beginner-friendly rules
+	 - Add a basic reset at the top:
+		 * { box-sizing: border-box; margin: 0; padding: 0; }
+	 - Set base font and background on `html, body` using `font-family` and `background-color`.
+	 - Header styles:
+		 - Use `#header { display: flex; align-items: center; gap: 10px; padding: 12px; }` to practice flexbox on the header.
+		 - Set a fixed logo width (e.g., `#header img { width: 120px; }`).
+		 - Style the search input and button with padding and border.
+	 - Product grid styles:
+		 - `.product-grid { display: flex; flex-wrap: wrap; gap: 12px; padding: 16px; }`
+		 - `.product { width: calc(25% - 12px); min-width: 160px; border: 1px solid #ddd; background: #fff; }` (this uses % and px together)
+		 - `.product-image img { width: 100%; height: 140px; object-fit: cover; }`
+		 - `.product-body { padding: 8px; }` (demonstrates padding)
+	 - Box model checks:
+		 - Add one `.boxed` example element to demonstrate `margin`, `padding`, and `border` using px values.
+	 - Units practice:
+		 - Use `font-size: 1rem;` on `html` (you can set it explicitly: `html { font-size: 16px; }`). Then use `.small { font-size: 0.875rem; }` and `.big { font-size: 1.25rem; }` to show rem usage.
+		 - Add a nested element with `font-size: 1.2em;` inside a container set to a different font-size to show how `em` depends on parent.
+		 - Use `height: 100vh;` for a hero/intro section to show viewport units.
+
+7) Keep CSS simple and beginner-friendly
+	 - Use only universal, element, class and id selectors (no advanced selectors).
+	 - Avoid `@media` for this task (we're not covering responsive queries now).
+
+8) Validation and checks (how to mark the task done)
+	 - Open `product-showcase.html` in your browser and verify:
+		 - Header shows logo, search box, and links.
+		 - Intro section fills 100vh (if you used it), and text sizes reflect rem/em differences.
+		 - Product grid shows 6 cards with images and names; images load and alt text is present.
+		 - Contact form works with browser validation (required/email).
+	 - Unit calculations to check manually:
+		 - Create a small test in the page: a parent `div` with `width:200px` and a child with `width:50%` — verify child is 100px in DevTools.
+		 - Note the behavior of `em` vs `rem` by inspecting computed font-size in DevTools.
+
+9) Acceptance criteria (task complete when):
+	 - All files exist and open in the browser without broken markup.
+	 - Images load and have meaningful `alt` text.
+	 - The form uses labels and required attributes where specified and browser enforces validation on submit.
+	 - CSS demonstrates selector types, box model properties and unit types (px, %, em, rem, vh).
+	 - Product layout is implemented using flexbox properties and wraps when window is narrowed (no @media needed since flex-wrap handles wrapping).
+
+Helpful tips and shortcuts
+- Use Unsplash seeded images: `https://images.unsplash.com/seed/<keyword>/800/600?auto=format&fit=crop&q=60` so you get consistent images for keywords like `smartphone`, `headphones`, `laptop`.
+- Use DevTools (F12) to inspect computed sizes and confirm %/px/em/rem values.
+- Start small: create the HTML structure first, then add CSS step-by-step and refresh the page.
+
+If you want, I can scaffold the project now (create the HTML and CSS files with starter code). Say "scaffold now" and I'll create the two files and open them for validation. Alternatively, tell me which step you'd like to do first and I'll guide you through it interactively.
