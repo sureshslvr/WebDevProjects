@@ -1,0 +1,202 @@
+$primary-color: lightblue;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10px;
+  background-color: #111;
+  color: #fff;
+}
+
+// Header styles
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: $primary-color;
+
+  img {
+    width: 80px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .search-form {
+    display: flex;
+    gap: 10px;
+
+    input {
+      padding: 6px 8px;
+      border: 1px solid #999;
+    }
+
+    button {
+      padding: 6px 10px;
+      background-color: #ffd54f;
+      border: 1px solid #999;
+      cursor: pointer;
+
+      &:hover {
+        background-color: gold;
+      }
+    }
+  }
+}
+
+.Heading {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  text-align:  center;
+}
+
+// Product grid (mobile-first)
+.card {
+  display: grid;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j";
+  gap: 10px;
+  padding: 10px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 8px;
+  }
+
+  .product-a {
+    grid-area: a;
+  }
+  .product-b {
+    grid-area: b;
+  }
+  .product-c {
+    grid-area: c;
+  }
+  .product-d {
+    grid-area: d;
+  }
+  .product-e {
+    grid-area: e;
+  }
+  .product-f {
+    grid-area: f;
+  }
+  .product-g {
+    grid-area: g;
+  }
+  .product-h {
+    grid-area: h;
+  }
+  .product-i {
+    grid-area: i;
+  }
+  .product-j {
+    grid-area: j;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+      animation: wow 2s ease-in-out 0s 1 both alternate;
+    }
+  }
+
+  h1 {
+    font-style: italic;
+    font-size: 16px;
+    color: wheat;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+// Contact section
+#contact {
+  padding: 20px;
+
+  form {
+    input,
+    textarea {
+      margin-bottom: 10px;
+      padding: 6px;
+      width: 100%;
+    }
+
+    button {
+      padding: 8px 12px;
+      background-color: $primary-color;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+// Desktop layout
+@media (min-width: 1000px) {
+  .Heading {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    text-align: center;
+  }
+  #header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card {
+    grid-template-areas:
+      "a a b c"
+      "a a d e"
+      "f g j j"
+      "h i j j";
+
+    aspect-ratio: 16 / 9;
+
+    img {
+      aspect-ratio: 16 / 9;
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes wow {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.3);
+  }
+}

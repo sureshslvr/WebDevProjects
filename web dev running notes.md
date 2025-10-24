@@ -1200,7 +1200,232 @@ Units that depend on another value (like the parent element or viewport).
 * Flexbox (display: flex, gap, flex-wrap, justify-content, align-items)
 * Animations for visual effects
 
+
 ---
+
+## 🎯 **CSS Day 8 – Media Queries (Responsive Design)**
+
+### 💡 Concept:
+
+Media Queries are used to make websites **responsive** — meaning they adapt automatically to different screen sizes like mobiles, tablets, and desktops.
+
+```css
+@media (min-width: 600px) {
+  .box {
+    background-color: blue;
+  }
+}
+```
+
+This means the `.box` will turn blue **only when** the screen width is **600px or more**.
+
+### 📘 Important Points:
+
+* **Mobile First Approach:**
+  Always design for mobile screens first and then use `min-width` queries for larger screens.
+
+* **Common Breakpoints:**
+
+  ```
+  0px – 600px   → Mobile
+  600px – 768px → Tablets
+  768px – 1024px → Small laptops
+  1024px+ → Desktop screens
+  ```
+
+* **Syntax Variants:**
+
+  ```css
+  @media (max-width: 768px) { ... }   /* For mobile-first */
+  @media (min-width: 1024px) { ... }  /* For desktop-first */
+  @media (min-width: 600px) and (max-width: 900px) { ... }  /* Target specific range */
+  ```
+
+* **Units Used for Responsiveness:**
+
+  * `%` → relative to parent
+  * `vw` → viewport width
+  * `vh` → viewport height
+  * `em` / `rem` → relative to font sizes
+
+### 🧩 Task:
+
+Applied `min-width` and `max-width` for iPad responsiveness.
+
+---
+
+## 🎯 **CSS Day 9 – Grid Basics**
+
+### 💡 Concept:
+
+CSS Grid Layout provides a **two-dimensional layout system** (both rows and columns). It’s perfect for creating structured web layouts like dashboards, galleries, and portfolios.
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 200px;
+  grid-template-rows: 100px 100px;
+}
+```
+
+### 📘 Key Properties:
+
+* **display: grid;** → enables grid layout
+
+* **grid-template-columns / rows:** defines number and size of columns and rows
+
+  ```css
+  grid-template-columns: 1fr 2fr 1fr;  /* fr = fraction unit */
+  ```
+
+* **grid-gap / gap:** adds space between items
+
+* **grid-area:** gives a name to each grid section
+
+  ```css
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  ```
+
+* **justify-items / align-items:** controls item alignment in cells
+
+* **justify-content / align-content:** aligns the entire grid within the container
+
+* **place-items:** shorthand for `align-items` and `justify-items`
+
+### ⚙️ Additional Topics You Should Know:
+
+* **Grid Line Numbers:**
+  You can position items using grid line numbers:
+
+  ```css
+  .item1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  ```
+* **repeat() Function:**
+  Simplifies column definitions:
+
+  ```css
+  grid-template-columns: repeat(3, 1fr);
+  ```
+
+---
+
+## 🎯 **CSS Day 10 – Grid Project + Sass (Super CSS)**
+
+### 💡 Concept:
+
+You built a **Grid Layout Project** showing desktop vs mobile views using responsive grids and introduced **Sass**, a CSS preprocessor that makes styling cleaner and more powerful.
+
+---
+
+### 🧩 **Grid Project Highlights**
+
+* Designed a **Product / Image Showcase** using Grid layout.
+* Used `@media` queries to adapt grid design for:
+
+  * **Desktop:** 16:9 layout
+  * **Mobile:** 1:1 layout
+* Assigned grid-area names for each section/image.
+
+Example:
+
+```css
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+```
+
+---
+
+### 💻 **Sass (Syntactically Awesome Style Sheets)**
+
+Sass allows developers to **write better CSS with variables, nesting, and reusability.**
+
+#### 🔹 Features:
+
+1. **Variables:**
+
+   ```scss
+   $primary-color: #3498db;
+   body {
+     background-color: $primary-color;
+   }
+   ```
+
+2. **Nesting:**
+
+   ```scss
+   nav {
+     ul {
+       li {
+         a {
+           color: white;
+         }
+       }
+     }
+   }
+   ```
+
+3. **Partials and Imports:**
+   Break large CSS into smaller files starting with `_` and import them:
+
+   ```scss
+   @import 'colors';
+   ```
+
+4. **Mixins:**
+   Reusable CSS blocks:
+
+   ```scss
+   @mixin flexCenter {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   .box {
+     @include flexCenter;
+   }
+   ```
+
+5. **Extends (Inheritance):**
+
+   ```scss
+   %button-style {
+     padding: 10px;
+     border-radius: 5px;
+   }
+
+   .primary-btn {
+     @extend %button-style;
+     background: blue;
+   }
+   ```
+
+6. **Compiled Output:**
+   Sass (`.scss`) files must be compiled into CSS.
+   In VS Code → use **Live Sass Compiler** extension.
+
+---
+
+### ⚙️ Extra Tips:
+
+* Always compile `.scss` → `.css` before linking in HTML.
+* Set **“Show Output Window: None”** and **“Watch on Launch: True”** in Live Sass Compiler settings.
+* Prefer **modular SCSS structure** (one file per section).
+
+---
+
+
 
 
 
