@@ -1424,8 +1424,157 @@ Sass allows developers to **write better CSS with variables, nesting, and reusab
 * Prefer **modular SCSS structure** (one file per section).
 
 ---
+Perfect, nani 👍
+Here are your **Day 17 Notes** — following the same structured format as before, clear and well-organized for your learning file 👇
+
+---
+
+## 🎯 **CSS Day 11 – Introduction to Bootstrap (CSS Framework)**
+
+### 🌐 **What is Bootstrap?**
+
+Bootstrap is a **popular open-source CSS framework** used for creating responsive, mobile-first web designs quickly.
+It provides a collection of pre-styled **CSS and JavaScript components** that help developers design modern websites efficiently.
+
+### ⚙️ **Including Bootstrap in a Project**
+
+To use Bootstrap, include the following in your HTML file:
+
+```html
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+> 📌 Always add the **CSS link** inside `<head>` and the **JS script** before the closing `</body>` tag.
+
+---
+
+### 🧩 **Bootstrap Components Learned**
+
+Bootstrap provides ready-made UI elements called **components**, which can be easily customized.
+
+1. **Accordion** – Used to show and hide sections of related content.
+   Example: FAQ sections.
+
+2. **Alerts** – Display messages or notifications with different color themes.
+   Example: Success, Warning, Error messages.
+
+3. **Badges** – Small count or label indicators used beside text or icons.
+   Example: “5” on a notification icon.
+
+4. **Buttons** – Pre-styled buttons with color variants (primary, secondary, danger, etc.).
+   Example: `<button class="btn btn-primary">Click Me</button>`
+
+5. **Button Groups** – Combine multiple buttons together in a single line for organized layouts.
+
+---
+
+### 💡 **Why Use Bootstrap?**
+
+✅ Speeds up development
+✅ Ensures responsive design automatically
+✅ Reduces manual CSS writing
+✅ Offers cross-browser compatibility
+✅ Provides a consistent UI style
+
+---
 
 
+## 🎯 **CSS Day 12 – Bootstrap Layouts, Breakpoints & Components**
+
+### 🌐 **1️⃣ Breakpoints**
+
+Breakpoints are **specific screen widths** where your website layout changes to fit different device sizes.
+Bootstrap uses **mobile-first approach** — styles are applied first for smaller devices and expand for larger ones.
+
+| Breakpoint  | Class Prefix | Min Width |
+| ----------- | ------------ | --------- |
+| Extra small | (none)       | `<576px`  |
+| Small       | `sm`         | `≥576px`  |
+| Medium      | `md`         | `≥768px`  |
+| Large       | `lg`         | `≥992px`  |
+| Extra Large | `xl`         | `≥1200px` |
+| XXL         | `xxl`        | `≥1400px` |
+
+📘 Example:
+
+```html
+<div class="col-sm-12 col-md-6 col-lg-4">Content</div>
+```
+
+➡️ This means:
+
+* 12 columns on mobile
+* 6 columns on tablet
+* 4 columns on desktop
+
+---
+
+### 🧱 **2️⃣ Containers**
+
+Containers are **layout wrappers** that control the width and alignment of your page content.
+
+| Type            | Class              | Description                             |
+| --------------- | ------------------ | --------------------------------------- |
+| Fixed Container | `.container`       | Has fixed width based on breakpoints    |
+| Fluid Container | `.container-fluid` | Always takes 100% width of the viewport |
+
+📘 Example:
+
+```html
+<div class="container">
+  <h1>Fixed Layout</h1>
+</div>
+
+<div class="container-fluid">
+  <h1>Full Width Layout</h1>
+</div>
+```
+
+---
+
+### 🃏 **3️⃣ Card Component**
+
+Cards are flexible content containers for displaying text, images, and buttons in a structured way.
+
+📘 Example:
+
+```html
+<div class="card" style="width: 18rem;">
+  <img src="image.jpg" class="card-img-top" alt="Product">
+  <div class="card-body">
+    <h5 class="card-title">Product Title</h5>
+    <p class="card-text">Short product description.</p>
+    <a href="#" class="btn btn-primary">Buy Now</a>
+  </div>
+</div>
+```
+
+**Card Structure:**
+
+* `.card` → Main container
+* `.card-img-top` → Image section
+* `.card-body` → Text section
+* `.card-title` → Title text
+* `.card-text` → Paragraph or description
+
+---
+
+### 💻 **4️⃣ Task – Landing Page Project**
+
+Created a **landing (home) page** using Bootstrap layout concepts:
+
+* Used **containers**, **cards**, and **responsive breakpoints**
+* Practiced using **mobile-first** approach
+* Learned how to design visually consistent UI with Bootstrap classes
+
+🧠 *Hosting options to be discussed next:*
+**Netlify**, **Render**, **Vercel**, **GitHub Pages**
+
+---
 
 
 
