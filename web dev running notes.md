@@ -1576,6 +1576,125 @@ Created a **landing (home) page** using Bootstrap layout concepts:
 
 ---
 
+====================================
+        Java Script
+====================================
+
+## 🎯 **JavaScript – Day 1: Introduction & Basics**
+
+### 💡 **What is JavaScript (JS)?**
+
+JavaScript is a **programming language** that adds **functionality and interactivity** to web pages.
+It’s one of the **core technologies** of web development along with **HTML** and **CSS**.
+
+| Technology | Purpose                    |
+| ---------- | -------------------------- |
+| HTML       | Defines structure/content  |
+| CSS        | Defines style/design       |
+| JavaScript | Adds functionality & logic |
+
+---
+
+### 🧠 **Why Learn JavaScript?**
+
+JavaScript allows you to:
+
+* Make web pages **dynamic and interactive**
+* Handle **user inputs**, **events**, and **animations**
+* Connect **frontend and backend** logic
+* Work as a **Full Stack Developer** using:
+
+  * Frontend: React.js, Angular, Vue.js
+  * Backend: Node.js, Express.js
+
+---
+
+### 🧩 **JavaScript Versions**
+
+* **ES5** → Older version, traditional JS (still widely supported)
+* **ES6 (ECMAScript 2015)** → Modern JS version introducing new syntax like `let`, `const`, arrow functions, etc.
+  🧾 *ECMA stands for European Computer Manufacturers Association.*
+
+---
+
+### ⚙️ **How to Add JavaScript to a Web Page**
+
+You can include JavaScript in your HTML using the `<script>` tag.
+
+```html
+<body>
+  <script src="script.js"></script>
+</body>
+```
+
+✅ **Best Practice:**
+Place the `<script>` tag **at the end of the body** so the HTML and CSS load first — ensuring faster performance.
+
+---
+
+### 📘 **JavaScript Syntax Basics**
+
+* No need for boilerplate structure like HTML or CSS
+* Code is written directly in `.js` file (e.g., `script.js`)
+* Semi-colons `;` are **optional** but recommended for readability
+
+---
+
+### 🧾 **Console Methods**
+
+Used to display output, logs, and debug messages in the **browser console** (Inspect → Console tab).
+
+```javascript
+console.log("Hello, welcome!");
+console.warn("This is a warning!");
+console.error("This is an error!");
+```
+
+---
+
+### 🧮 **Variables**
+
+Variables are used to **store data**.
+
+```javascript
+var a;       // Declaration
+a = 10;      // Initialization
+console.log(a);
+console.log("The value of a is:", a);
+```
+
+💡 JS automatically detects the **data type** of the variable (dynamic typing).
+
+---
+
+### 🔢 **Arithmetic Operators**
+
+Used for performing mathematical operations:
+`+`, `-`, `*`, `/`, `%` (modulus)
+
+Example:
+
+```javascript
+var a = 2;
+var b = 3;
+console.log(a * b);   // Output: 6
+```
+
+---
+
+### ⚠️ **alert()**
+
+Displays a popup message on the screen.
+
+```javascript
+alert("Welcome to JavaScript!");
+```
+
+---
+
+
+
+
 
 
 
