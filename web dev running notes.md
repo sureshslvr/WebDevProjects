@@ -1689,8 +1689,156 @@ Displays a popup message on the screen.
 ```javascript
 alert("Welcome to JavaScript!");
 ```
+==========================================
+
+## 🎯 **JavaScript – Day 2: ES6, Inputs, Data Types & Type Casting**
+
+### 💡 **What is ES6?**
+
+ES6 (ECMAScript 2015) is the **current standard version** of JavaScript that introduced modern and cleaner syntax for easier, faster, and more efficient coding.
+
+Examples of ES6 features include:
+
+* `let` and `const` instead of `var`
+* Arrow functions `() => {}`
+* Template literals (`` `${}` ``)
+* Default parameters, spread operators, etc.
 
 ---
+
+### ⚙️ **JavaScript as a Dynamically Typed Language**
+
+In JavaScript, the **data type of a variable is determined automatically** based on the value assigned — no need to specify type explicitly.
+
+Example:
+
+```javascript
+var a = 10;       // number
+a = "Hello";      // now it's a string
+```
+
+---
+
+### 🧠 **Pop-ups and Dialog Boxes**
+
+JavaScript provides several built-in dialog boxes for user interaction:
+
+1️⃣ **alert()**
+Displays a message in a popup box.
+
+```javascript
+alert("How are you?");
+```
+
+2️⃣ **prompt()**
+Takes input from the user as a **string**.
+
+```javascript
+var a = prompt("Enter a number:");
+console.log(a);
+```
+
+3️⃣ **confirm()**
+Displays a message with **OK** and **Cancel** buttons and returns a **boolean** (`true` or `false`).
+
+```javascript
+var value = confirm("Are you 18+?");
+console.log(value);
+```
+
+---
+
+### 🧩 **Example: Input Behavior**
+
+```javascript
+var a = prompt("Enter num1:");
+var b = prompt("Enter num2:");
+console.log(a + b);
+```
+
+🧾 Output: If user enters `2` and `3`, it prints `23` (string concatenation).
+➡️ Because prompt input is always **string** by default.
+
+---
+
+### 🔢 **Increment & Decrement Operators**
+
+```javascript
+console.log(a++); // Post Increment – use value, then add 1
+console.log(++a); // Pre Increment – add 1, then use value
+console.log(a--); // Post Decrement – use value, then subtract 1
+console.log(--a); // Pre Decrement – subtract 1, then use value
+```
+
+---
+
+### 🔒 **var vs const**
+
+| Keyword | Redeclare | Reassign | Scope           |
+| ------- | --------- | -------- | --------------- |
+| var     | ✅ Yes     | ✅ Yes    | Function/global |
+| let     | ❌ No      | ✅ Yes    | Block           |
+| const   | ❌ No      | ❌ No     | Block           |
+
+**Example:**
+
+```javascript
+var a = 5;
+var a = 10;   // works (redeclared)
+
+const b = 20;
+b = 30;       // ❌ Error - const can’t be reassigned
+```
+
+---
+
+### 🧮 **Data Types in JavaScript**
+
+**1️⃣ Primitive Data Types:**
+(Stores single values directly in memory)
+
+* Number
+* String
+* Boolean
+* Undefined
+* Null
+* BigInt
+* Symbol
+
+**2️⃣ Reference (Non-Primitive) Data Types:**
+(Stores references to memory addresses)
+
+* Object
+* Array
+* Function
+
+---
+
+### 🔄 **Type Casting (Type Conversion)**
+
+Converting one data type into another.
+
+#### 📘 Example: String → Number
+
+```javascript
+var num1 = prompt("Enter num1:");
+var num2 = prompt("Enter num2:");
+
+var real1 = Number(num1);
+var real2 = Number(num2);
+
+console.log(real1 + real2); // Now performs addition instead of concatenation
+```
+
+**Other Conversions:**
+
+* `Number("123")` → converts string to number
+* `String(123)` → converts number to string
+* `Boolean(value)` → converts to true/false
+
+---
+
+
 
 
 
