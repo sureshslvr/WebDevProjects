@@ -1838,11 +1838,455 @@ console.log(real1 + real2); // Now performs addition instead of concatenation
 
 ---
 
+## 🎯 **JavaScript – Day 3: Node.js, Data Types, and Core Concepts**
 
+---
 
+### ⚙️ **JavaScript Runtime Environment**
 
+JavaScript was originally designed to **run inside browsers** using engines like **V8 (by Google)**.
+However, to execute JS **outside the browser**, developers use **Node.js**, which provides its own **runtime environment** for JavaScript.
 
+---
 
+### 💻 **Node.js Overview**
 
+* **Node.js** is a **runtime environment** built on **Chrome’s V8 engine** that allows JavaScript to run outside the browser.
+* It helps in creating **backend servers**, **desktop apps**, and **full-stack web applications**.
 
+#### 🧠 History:
 
+* Created by **Ryan Dahl** in **2009**.
+* Uses the **V8 Engine** from Google Chrome.
+
+#### 🧩 Example:
+
+Steps to run JavaScript using Node.js:
+
+```bash
+# Navigate to your JS folder
+cd javascript
+
+# Run your JavaScript file
+node script.js
+```
+
+Example file (`script.js`):
+
+```javascript
+console.log("Hello, JavaScript!");
+```
+
+🖥 Output in terminal:
+
+```
+Hello, JavaScript!
+```
+
+✅ Node.js makes it possible to use JavaScript for **backend development**, **API creation**, and even **desktop applications**.
+
+---
+
+### 🧮 **JavaScript Data Types**
+
+JavaScript has **two main categories** of data types:
+
+#### 🔹 1. **Primitive Data Types**
+
+| Type          | Description                     | Example                           |
+| ------------- | ------------------------------- | --------------------------------- |
+| **Number**    | For integers, floats, decimals  | `let num = 45;`                   |
+| **BigInt**    | For very large numbers          | `let big = 1234567890123456789n;` |
+| **String**    | Sequence of characters          | `let name = "Nani";`              |
+| **Boolean**   | Logical true/false              | `let isTrue = false;`             |
+| **Undefined** | Declared but not assigned       | `let a; // undefined`             |
+| **Null**      | Represents empty or no value    | `let b = null;`                   |
+| **Symbol**    | Unique identifier (rarely used) | `let sym = Symbol("id");`         |
+
+🧠 **Note:**
+
+* `undefined` → variable declared but not initialized.
+* `null` → explicitly assigned to represent “no value”.
+
+---
+
+#### 🔹 2. **Reference Data Types**
+
+| Type         | Description                                        |
+| ------------ | -------------------------------------------------- |
+| **Object**   | Collection of key-value pairs                      |
+| **Array**    | Collection of multiple values in a single variable |
+| **Function** | Block of reusable code                             |
+
+---
+
+### 🔢 **Objects**
+
+Objects store data in **key-value pairs**.
+
+```javascript
+const user = {
+  firstName: 'Vijay',
+  age: 24,
+  city: 'Hyderabad'
+};
+
+console.log(user.firstName); // Vijay
+console.log(user.age);       // 24
+```
+
+💡 **Objects are mutable:**
+You can change property values, but you cannot reassign the entire constant object reference.
+
+```javascript
+user.city = "Bangalore";  // ✅ Allowed
+user = {};                // ❌ Not allowed
+```
+
+---
+
+### 📦 **Arrays**
+
+Arrays are used to store multiple values in a single variable.
+Array indices start from **0**.
+
+```javascript
+let heroes = ["Ironman", "Thor", "Hulk"];
+console.log(heroes[0]);       // Ironman
+console.log(heroes.length);   // 3
+```
+
+---
+
+### 🧮 **Operators**
+
+#### 🔹 Logical Operators
+
+| Operator | Meaning     |   |            |
+| -------- | ----------- | - | ---------- |
+| `&&`     | Logical AND |   |            |
+| `        |             | ` | Logical OR |
+| `!`      | Logical NOT |   |            |
+
+Example:
+
+```javascript
+let x = true;
+let y = false;
+console.log(x && y); // false
+console.log(x || y); // true
+console.log(!x);     // false
+```
+
+---
+
+#### 🔹 Comparison Operators
+
+| Operator | Meaning                       |
+| -------- | ----------------------------- |
+| `<`      | Less than                     |
+| `>`      | Greater than                  |
+| `<=`     | Less than or equal to         |
+| `>=`     | Greater than or equal to      |
+| `==`     | Compares **values only**      |
+| `===`    | Compares **values and types** |
+| `!=`     | Not equal (value)             |
+| `!==`    | Not equal (value and type)    |
+
+Example:
+
+```javascript
+let a = 1;
+let b = "1";
+
+console.log(a == b);  // true  → compares value only
+console.log(a === b); // false → compares value + type
+```
+
+---
+
+### 🔄 **Type Conversion (Type Casting)**
+
+Converting one data type into another.
+For example, converting **string → number**.
+
+```javascript
+let isValue = '123';
+console.log(typeof Number(isValue)); // number
+console.log(typeof isValue);         // string
+```
+
+Other conversions:
+
+```javascript
+Number("100");  // converts string to number
+String(100);    // converts number to string
+Boolean(0);     // false
+Boolean(1);     // true
+```
+
+---
+
+### 🧠 **Execution Process in Node.js**
+
+1️⃣ JS file is written and saved.
+2️⃣ The **parser** checks the syntax and creates a **syntax tree**.
+3️⃣ The **V8 engine** uses **JIT (Just-In-Time) compilation** to convert code into machine language.
+4️⃣ The **runtime environment (Node.js)** executes the code.
+
+---
+
+## 🎯 **JavaScript – Day 4–6: Conditionals, Arrays & Loops**
+
+---
+
+### 💡 **Conditional Statements**
+
+Conditional statements help make decisions in code based on conditions.
+
+#### 🧩 **if / else Syntax**
+
+```javascript
+if (condition) {
+  // code if condition is true
+} else {
+  // code if condition is false
+}
+```
+
+📘 Example:
+
+```javascript
+if (6 > 5) {
+  console.log("num1 is greater");
+}
+```
+
+---
+
+### 🧠 **Examples:**
+
+1️⃣ **Compare Two Strings**
+
+```javascript
+let s = "suresh";
+let s1 = "nani";
+
+if (s === s1) {
+  console.log("strings are same");
+} else {
+  console.log("strings are not same");
+}
+```
+
+2️⃣ **Check If Variable is a Number**
+
+```javascript
+let a = 3;
+if (typeof(a) === 'number') {
+  console.log("number");
+} else {
+  console.log("not a number");
+}
+```
+
+3️⃣ **Check Boolean Value**
+
+```javascript
+let maggieReady = true;
+if (maggieReady) {
+  console.log("Maggie is ready to eat");
+} else {
+  console.log("Maggie will take 2 minutes");
+}
+```
+
+4️⃣ **Check If an Array is Empty**
+
+```javascript
+let fruits = ["mango"];
+if (fruits.length > 0) {
+  console.log("Fruits are there in basket");
+} else {
+  console.log("Fruit basket is empty");
+}
+```
+
+💡 Arrays can be created using either:
+
+```javascript
+let arr = ["apple", "banana"];
+let arr2 = new Array("apple", "banana");
+```
+
+---
+
+## 🍽️ **Array Practice Examples**
+
+1️⃣ **Favorite Cricketers**
+
+```javascript
+let fav = ["virat", "rohit"];
+console.log(fav[0]); // Access first element
+```
+
+2️⃣ **Favorite Cities**
+
+```javascript
+let cities = ["jammikunta", "hyderabad", "karimnagar"];
+console.log(cities[2]); // Access 3rd element
+```
+
+3️⃣ **Update Array Element**
+
+```javascript
+let dosas = ["masala dosa", "plain dosa", "ghee karam dosa"];
+dosas[1] = "ravva dosa";
+console.log(dosas);
+```
+
+4️⃣ **Add New Element (push)**
+
+```javascript
+dosas.push("plain dosa");
+console.log(dosas);
+```
+
+5️⃣ **Remove Last Element (pop)**
+
+```javascript
+dosas.pop();
+console.log(dosas);
+```
+
+---
+
+### 🪵 **Soft Copy vs Hard Copy in Arrays**
+
+📘 **Soft Copy:**
+Assigning one array to another copies only the reference, not the actual data.
+
+```javascript
+let trees = ["tulasi", "mango", "banana"];
+let softcopy = trees;
+softcopy[0] = "tulasi1";
+
+console.log(trees);     // ["tulasi1", "mango", "banana"]
+console.log(softcopy);  // ["tulasi1", "mango", "banana"]
+```
+
+📘 **Hard Copy:**
+To make an independent copy (duplicate values, not reference):
+
+```javascript
+let q = ['a', 'b', 'c'];
+let r = [...q];  // spread operator (copies values)
+r.pop();
+console.log(q);  // ['a', 'b', 'c']
+console.log(r);  // ['a', 'b']
+```
+
+✅ The `...` (spread operator) copies elements into a new array (not reference).
+
+---
+
+### 🧩 **Useful Array Methods**
+
+| Method       | Description           | Example                        |
+| ------------ | --------------------- | ------------------------------ |
+| `push()`     | Add element at end    | `arr.push("item")`             |
+| `pop()`      | Remove last element   | `arr.pop()`                    |
+| `concat()`   | Merge two arrays      | `arr3 = arr1.concat(arr2)`     |
+| `includes()` | Check if value exists | `arr.includes("mango")` → true |
+
+---
+
+## 🔁 **Loops in JavaScript**
+
+Loops are used to execute a block of code multiple times.
+
+### 🔹 **Types of Loops**
+
+* `while`
+* `do...while`
+* `for`
+* `for...in`
+* `for...of`
+* `forEach()`
+
+---
+
+### 🧮 **While Loop**
+
+Executes as long as the condition is true.
+
+```javascript
+let sum = 0;
+let i = 1;
+
+while (i <= 5) {
+  sum = sum + i;
+  i++;
+}
+console.log(sum); // 15
+```
+
+---
+
+### 🔹 **Do-While Loop**
+
+Executes the code block **at least once**, even if the condition is false.
+
+```javascript
+let sum = 0;
+let i = 1;
+
+do {
+  sum = sum + i;
+  i++;
+} while (i <= 5);
+
+console.log(sum); // 15
+```
+
+---
+
+### 🔹 **For Loop (Same as Java)**
+
+Has **3 parts:** initialization, condition, increment/decrement.
+
+```javascript
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+```
+
+---
+
+### 🔹 **Example – Multiply Array Elements by 2**
+
+```javascript
+let arr = [1, 2, 3, 4, 5, 6];
+let resArr = [];
+
+for (let i = 0; i < arr.length; i++) {
+  resArr[i] = arr[i] * 2;
+}
+console.log(resArr);
+```
+
+🧠 If you try to perform operations on a non-existing element, you’ll get `NaN` (Not a Number).
+
+---
+
+### 🔹 **Breaking Out of Loops**
+
+You can exit a loop early using the **`break`** keyword.
+
+```javascript
+for (let i = 1; i <= 10; i++) {
+  if (i === 5) break;
+  console.log(i);
+}
+// Output: 1 2 3 4
+```
