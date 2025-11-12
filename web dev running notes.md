@@ -2483,4 +2483,215 @@ console.log(add(2, 3)); // 5
 ```
 
 ---
+## 🎯 **JavaScript – Day 8: Hoisting, Function Types, Arrow Functions, Rest Operator & IIFE**
+
+---
+
+### ⚙️ **1️⃣ Hoisting**
+
+**Definition:**
+Hoisting is JavaScript’s default behavior of **moving variable and function declarations to the top** of their scope (before code execution).
+
+#### 📘 Example 1: Variable Hoisting
+
+```javascript
+console.log(a);  // Output: undefined
+var a = 10;
+```
+
+🧠 **Explanation:**
+
+* The declaration `var a` is hoisted (moved to top), but **not the initialization (10)**.
+* So, `a` exists but has a temporary value `undefined`.
+
+#### 📘 Example 2: Function Hoisting
+
+```javascript
+greet();  // Works fine
+
+function greet() {
+  console.log("Hello!");
+}
+```
+
+✅ **Functions are hoisted completely** — both declaration and definition — so you can call them **before defining**.
+
+---
+
+### ❌ **ReferenceError Example**
+
+```javascript
+console.log(b);  // ❌ ReferenceError
+let b = 20;
+```
+
+🧠 `let` and `const` are **not hoisted like `var`**.
+They are in a **temporal dead zone (TDZ)** until initialized.
+
+---
+
+### 💡 **Summary of Hoisting:**
+
+| Keyword / Type       | Hoisted? | Initialized? | Value Before Init       |
+| -------------------- | -------- | ------------ | ----------------------- |
+| var                  | ✅ Yes    | ❌ No         | `undefined`             |
+| let                  | ✅ Yes    | ❌ No         | ReferenceError (TDZ)    |
+| const                | ✅ Yes    | ❌ No         | ReferenceError (TDZ)    |
+| function declaration | ✅ Fully  | ✅ Yes        | Full function available |
+
+---
+
+### 🧩 **2️⃣ DRY vs WET**
+
+* **WET (Write Everything Twice)** → Repeating same logic multiple times
+* **DRY (Don’t Repeat Yourself)** → Writing reusable functions to reduce repetition
+
+🧠 As developers, we **always follow DRY** to keep code short, clean, and efficient.
+
+---
+
+### 🔹 **3️⃣ Function Types**
+
+#### **(a) Function Declaration**
+
+Also called **Function Statement**.
+Can be called before or after declaration (because of hoisting).
+
+```javascript
+function abcd() {
+  console.log("Function Declaration");
+}
+abcd();
+```
+
+---
+
+#### **(b) Function Expression**
+
+Function assigned to a variable.
+**Not hoisted**, so must be defined before use.
+
+```javascript
+var a = function() {
+  console.log("Function Expression");
+};
+a();
+```
+
+🧠 Used when we want to pass functions as values (for callbacks, event handlers, etc.)
+
+---
+
+#### **(c) Anonymous Function**
+
+A function **without a name**, used where a function is required temporarily — e.g., inside loops, event listeners, or callbacks.
+
+```javascript
+setTimeout(function() {
+  console.log("Anonymous function executed!");
+}, 1000);
+```
+
+✅ Used when we don’t need to reuse the function elsewhere.
+
+---
+
+### ⚡ **4️⃣ Fat Arrow (Arrow) Functions**
+
+Introduced in **ES6**, arrow functions are a **shorter and cleaner** way to write functions.
+
+#### 📘 Example:
+
+```javascript
+let greet = () => {
+  console.log("Hello from arrow function!");
+};
+greet();
+```
+
+---
+
+#### **Arrow Function with Parameters**
+
+```javascript
+let abc = (a) => {
+  console.log(a);
+};
+abc("Hello");
+```
+
+If there’s **only one parameter**, parentheses `()` are **optional**:
+
+```javascript
+let greetUser = name => console.log(`Hello ${name}!`);
+```
+
+---
+
+#### **Arrow Function with Implicit Return**
+
+If the function has a single return statement, `{}` and `return` can be omitted.
+
+📘 Example:
+
+```javascript
+let add = (a, b) => a + b;
+console.log(add(5, 3)); // Output: 8
+```
+
+✅ Cleaner, shorter syntax → great for callbacks and array operations (`map`, `filter`, etc.)
+
+---
+
+### 🔹 **5️⃣ Rest Operator (`...`)**
+
+**Purpose:**
+Collects multiple values into a single array parameter.
+It allows a function to accept **any number of arguments**.
+
+#### 📘 Example:
+
+```javascript
+function qbc(a, b, c, ...rest) {
+  console.log(a, b, c);
+  console.log(rest);
+}
+qbc(1, 2, 3, 4, 5, 6, 7, 8, 9);
+```
+
+✅ Output:
+
+```
+1 2 3
+[4, 5, 6, 7, 8, 9]
+```
+
+🧠 Rest Operator:
+
+* Always used as **the last parameter** in a function.
+* Stores extra values in **array format**.
+* Used when the number of arguments is **unknown or dynamic**.
+
+---
+
+### 💫 **6️⃣ IIFE (Immediately Invoked Function Expression)**
+
+IIFE = Function that **executes immediately after it’s defined**.
+
+#### 📘 Example:
+
+```javascript
+(function ab() {
+  console.log("IIFE executed immediately!");
+})();
+```
+
+✅ **Use Case:**
+
+* Used to run code only once.
+* Helps create a **private scope**, avoiding variable pollution.
+* Commonly used in older JS code before modules existed.
+
+---
+
 
