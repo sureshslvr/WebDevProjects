@@ -124,9 +124,37 @@ console.log(sum)
 let arr=new Array(1,2,3,4,5,6);
 let resArr=new Array();
 for(let i=0;i<=arr.length-1;i++){
-    resArr[i]=arr[i]*2;
+    if(arr[i]==2){
+        continue;
+    }
+    resArr.push(arr[i]*2);
 }
 console.log(resArr)
+
+let numbers = [1,2,3,4,5];
+let smallNumbers=[];
+for (const num of numbers) {
+    if(num==4){
+        break;
+    }
+    smallNumbers.push(num);
+}
+console.log(smallNumbers);
+
+const symbols={
+    yt:"youtube",
+    ig:'instagram',
+    fb:"facebook"
+}
+for (const n in symbols) {
+    console.log(`key is: ${n} and value is: ${symbols[n]}`); 
+}
+
+let numb = [1,2,3,4,5];
+numb.forEach(element => {
+    console.log(element);
+});
+
 
 
 

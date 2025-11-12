@@ -2290,3 +2290,197 @@ for (let i = 1; i <= 10; i++) {
 }
 // Output: 1 2 3 4
 ```
+
+## 🎯 **JavaScript – Day 7: Loops (for, for...of, for...in, forEach) & Functions**
+
+---
+
+### 🔁 **For Loop (with continue & break)**
+
+The **for loop** is used when you know the number of iterations to perform.
+
+#### 🧩 Syntax:
+
+```javascript
+for (initialization; condition; increment/decrement) {
+  // code block
+}
+```
+
+#### 📘 Example with `continue`
+
+The **continue** statement skips the current iteration and moves to the next one.
+
+```javascript
+let arr = [1, 2, 3, 4, 5, 6];
+let resArr = [];
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] == 2) {
+    continue; // skips the value 2
+  }
+  resArr.push(arr[i] * 2);
+}
+
+console.log(resArr);  // Output: [2, 6, 8, 10, 12]
+```
+
+✅ **Note:**
+
+* `break` → stops the loop immediately
+* `continue` → skips the current iteration
+
+---
+
+### 🔹 **for...of Loop**
+
+Used to iterate **directly over the elements (values)** of an iterable like an array.
+
+#### 📘 Example:
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let smallNumbers = [];
+
+for (const num of numbers) {
+  if (num == 4) {
+    break; // stops at 4
+  }
+  smallNumbers.push(num);
+}
+
+console.log(smallNumbers); // [1, 2, 3]
+```
+
+✅ Cleaner syntax than `forEach`, and allows the use of `break` and `continue`.
+
+---
+
+### 🔹 **for...in Loop**
+
+Used to iterate over the **keys (properties)** of an object.
+
+#### 📘 Example with Template Literals (Backticks):
+
+```javascript
+const symbols = {
+  yt: "youtube",
+  ig: "instagram",
+  fb: "facebook"
+};
+
+for (const n in symbols) {
+  console.log(`key is: ${n} and value is: ${symbols[n]}`);
+}
+```
+
+✅ Use **backticks (`` ` ``)** for **template literals** to embed variables using `${variable}`.
+They make string concatenation cleaner and more readable.
+
+---
+
+### 🔹 **forEach Loop**
+
+Used to execute a function for **each element in an array**.
+
+#### 📘 Example:
+
+```javascript
+let numb = [1, 2, 3, 4, 5];
+
+numb.forEach(element => {
+  console.log(element);
+});
+```
+
+✅ Cannot use `break` or `continue` inside `forEach`.
+✅ Ideal for performing an action on every element.
+
+---
+
+### 🧠 **When to Use Which Loop**
+
+| Loop Type  | Use Case                                              | Supports break/continue |
+| ---------- | ----------------------------------------------------- | ----------------------- |
+| `for`      | When you need index control or custom iteration logic | ✅                       |
+| `forEach`  | When performing operations on each element            | ❌                       |
+| `for...of` | When iterating values cleanly with break/continue     | ✅                       |
+| `for...in` | When looping through object keys                      | ✅                       |
+
+---
+
+## ⚙️ **Functions in JavaScript**
+
+Functions are **reusable blocks of code** designed to perform specific tasks.
+
+---
+
+### 🔹 **1. Function Declaration**
+
+```javascript
+function greet() {
+  console.log("Welcome to the class");
+}
+greet();
+```
+
+✅ Output:
+
+```
+Welcome to the class
+```
+
+---
+
+### 🔹 **2. Parameterized Function**
+
+You can pass arguments into functions to make them dynamic.
+
+```javascript
+function greetUser(name) {
+  console.log("Hello " + name + "!");
+}
+greetUser("Srikar");
+```
+
+✅ Output:
+
+```
+Hello Srikar!
+```
+
+---
+
+### 🔹 **3. Function with Return Value**
+
+Functions can return values to be used later in code.
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+console.log(add(5, 3));  // Output: 8
+```
+
+---
+
+### 🧠 **Why Use Functions**
+
+✅ Avoid code repetition (reusability)
+✅ Increases readability and maintainability
+✅ Can return computed values
+✅ Forms the base for modular programming
+
+---
+
+### 💡 **Extra Tip – Arrow Function (ES6)**
+
+A modern, concise way to write functions.
+
+```javascript
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // 5
+```
+
+---
+
