@@ -2694,4 +2694,241 @@ IIFE = Function that **executes immediately after it’s defined**.
 
 ---
 
+## 🎯 **JavaScript – Day 9: IIFE, Higher-Order Functions, Callback, Closures & Map**
+
+---
+
+### ⚡ **1️⃣ IIFE (Immediately Invoked Function Expression)**
+
+**Definition:**
+An **IIFE** is a function that **executes immediately after it is defined** — without needing to be called separately.
+
+#### 📘 Syntax:
+
+```javascript
+(function() {
+  console.log("IIFE executed!");
+})();
+```
+
+✅ **Key Points:**
+
+* Runs automatically once defined.
+* Creates a **private scope** — variables inside it can’t be accessed outside.
+* Commonly used to **avoid polluting the global scope**.
+
+#### 📘 Example:
+
+```javascript
+(function greet() {
+  let name = "Nani";
+  console.log(`Hello ${name}!`);
+})();
+```
+
+---
+
+### ⚙️ **2️⃣ HOF (Higher-Order Functions)**
+
+**Definition:**
+A **Higher-Order Function** is a function that either:
+
+1. **Accepts another function** as an argument, or
+2. **Returns a function** as its result.
+
+These are key to writing **reusable and flexible code** in JavaScript.
+
+#### 📘 Example 1 – Returning a Function:
+
+```javascript
+function abcd() {
+  return function() {
+    console.log("Returned from another function");
+  };
+}
+
+abcd()();  // Output: Returned from another function
+```
+
+#### 📘 Example 2 – Accepting a Function:
+
+```javascript
+function process(callback) {
+  callback();
+}
+
+function sayHi() {
+  console.log("Hello from callback!");
+}
+
+process(sayHi);
+```
+
+✅ **Why We Use It:**
+
+* For **callbacks**, **event handling**, **promises**, and **functional programming** patterns.
+
+---
+
+### 🔹 **3️⃣ Callback Function**
+
+**Definition:**
+A **callback function** is a function **passed as an argument** to another function, and **executed later**.
+
+#### 📘 Example:
+
+```javascript
+function greetUser(callback) {
+  console.log("Fetching user data...");
+  callback();
+}
+
+function displayMessage() {
+  console.log("Welcome user!");
+}
+
+greetUser(displayMessage);
+```
+
+✅ **Real-world Example:**
+Used in asynchronous operations like:
+
+* API calls
+* Event listeners
+* Timers (`setTimeout`, `setInterval`)
+
+#### 📘 Example:
+
+```javascript
+setTimeout(function() {
+  console.log("This runs after 2 seconds");
+}, 2000);
+```
+
+---
+
+### 🧩 **4️⃣ Pure vs Impure Functions**
+
+| Type                | Description                                                | Example                                     |
+| ------------------- | ---------------------------------------------------------- | ------------------------------------------- |
+| **Pure Function**   | Always returns same output for same input, no side effects | `add(a, b)`                                 |
+| **Impure Function** | Depends on or changes external data (side effects)         | modifies global variable, uses console/logs |
+
+#### 📘 Example:
+
+```javascript
+let count = 0;
+
+function impure() {
+  count++; // modifies global variable
+  return count;
+}
+```
+
+---
+
+### 🌍 **5️⃣ Scope (Global vs Local)**
+
+* **Global Scope:**
+  Variables declared outside any function — accessible anywhere.
+
+  ```javascript
+  var name = "Nani"; // global
+  function greet() {
+    console.log(name);
+  }
+  ```
+
+* **Local Scope:**
+  Variables declared inside a function — accessible only within that function.
+
+  ```javascript
+  function greet() {
+    let message = "Hello!";
+    console.log(message);
+  }
+  console.log(message); // ❌ Error
+  ```
+
+---
+
+### 💡 **6️⃣ First-Class Functions**
+
+In JavaScript, **functions are treated as variables** — they can be:
+
+* Stored in variables
+* Passed as arguments
+* Returned from other functions
+
+📘 Example:
+
+```javascript
+function greet() {
+  console.log("Hi!");
+}
+
+let sayHi = greet; // store in variable
+sayHi();           // call through variable
+```
+
+✅ This concept enables **callbacks, closures, and HOFs.**
+
+---
+
+### 🔁 **7️⃣ Map Method**
+
+**Definition:**
+The `map()` method creates a **new array** by applying a function to each element of an existing array.
+
+#### 📘 Example:
+
+```javascript
+let nums = [1, 2, 3, 4];
+let doubled = nums.map(function(n) {
+  return n * 2;
+});
+console.log(doubled);  // [2, 4, 6, 8]
+```
+
+✅ **Key Points:**
+
+* Does **not modify** the original array.
+* Returns a **new transformed array**.
+* Often used for **data transformation** and **rendering lists** in React.
+
+---
+
+### 🔒 **8️⃣ Closures**
+
+**Definition:**
+A **closure** is when an inner function **remembers and accesses variables** from its **outer function’s scope**, even after the outer function has finished executing.
+
+#### 📘 Example:
+
+```javascript
+function outer() {
+  let counter = 0;
+
+  function inner() {
+    counter++;
+    console.log(counter);
+  }
+
+  return inner;
+}
+
+const fn = outer();
+fn(); // 1
+fn(); // 2
+fn(); // 3
+```
+
+✅ **Why It’s Important:**
+
+* Helps in **data privacy** and **state preservation**.
+* Used in real-world cases like counters, event listeners, and module patterns.
+
+---
+
+
 
