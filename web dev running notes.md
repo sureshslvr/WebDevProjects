@@ -2930,5 +2930,330 @@ fn(); // 3
 
 ---
 
+## 🎯 **JavaScript – Day 10: Filter, Reduce, Sorting & Sets**
 
+---
+
+### 🔹 **1️⃣ Filter Method**
+
+**Definition:**
+`filter()` is used to **create a new array** by filtering out elements that **meet a specific condition**.
+
+#### 📘 Syntax:
+
+```javascript
+array.filter(function(element) {
+  return condition;
+});
+```
+
+#### 📘 Example:
+
+```javascript
+var arr = [1, 2, 3, 4];
+
+var ans = arr.filter(function(value) {
+  return value === 3;
+});
+
+console.log(ans); // [3]
+```
+
+✅ **Key Points:**
+
+* Returns a **new array** with only the elements that pass the condition.
+* **Does not modify** the original array.
+* Often used to filter unwanted or invalid data.
+
+#### 📘 Real-world Example:
+
+```javascript
+var ages = [12, 25, 18, 30, 15];
+var adults = ages.filter(function(age) {
+  return age >= 18;
+});
+console.log(adults); // [25, 18, 30]
+```
+
+---
+
+### 🔹 **2️⃣ Reduce Method**
+
+**Definition:**
+`reduce()` is used to **reduce an array to a single value** by accumulating results as it iterates.
+
+#### 📘 Syntax:
+
+```javascript
+array.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+}, initialValue);
+```
+
+#### 📘 Example:
+
+```javascript
+var arr = [1, 2, 3, 4];
+
+var ans = arr.reduce(function(accumulator, key) {
+  return accumulator + key;
+}, 0);
+
+console.log(ans); // 10
+```
+
+✅ **How It Works:**
+
+* `accumulator` → stores running total (starts with initial value, here `0`)
+* `key` → current array element being processed
+* Returns a **single result** after iteration
+
+#### 📘 Real-world Example:
+
+```javascript
+var prices = [200, 300, 150, 350];
+var total = prices.reduce(function(total, price) {
+  return total + price;
+}, 0);
+
+console.log("Total price:", total); // Total price: 1000
+```
+
+---
+
+### 🔹 **3️⃣ Array Sorting**
+
+**Definition:**
+`sort()` method sorts array elements **as strings** by default, but you can define a custom comparison.
+
+#### 📘 Example:
+
+```javascript
+var numbers = [10, 2, 30, 25, 8];
+
+numbers.sort(function(a, b) {
+  return a - b;  // ascending order
+});
+console.log(numbers); // [2, 8, 10, 25, 30]
+```
+
+✅ **To sort descending:**
+
+```javascript
+numbers.sort(function(a, b) {
+  return b - a;
+});
+console.log(numbers); // [30, 25, 10, 8, 2]
+```
+
+---
+
+### 🔹 **4️⃣ Removing Duplicates**
+
+Duplicates in arrays can be removed easily using the **Set object** in JavaScript.
+
+#### 📘 Example:
+
+```javascript
+var arr = [1, 2, 2, 3, 4, 4, 5];
+
+var uniqueArr = [...new Set(arr)];
+console.log(uniqueArr); // [1, 2, 3, 4, 5]
+```
+
+✅ **Explanation:**
+
+* `new Set(arr)` creates a set with only **unique elements**.
+* `[...]` (spread operator) converts the set back to an array.
+
+---
+
+### 🔹 **5️⃣ Why Use These Methods**
+
+| Method     | Purpose                     | Returns      | Modifies Original Array? |
+| ---------- | --------------------------- | ------------ | ------------------------ |
+| `filter()` | Filter out unwanted values  | New Array    | ❌ No                     |
+| `reduce()` | Combine all values into one | Single Value | ❌ No                     |
+| `sort()`   | Arrange values in order     | Sorted Array | ✅ Yes                    |
+| `Set()`    | Remove duplicates           | Unique Array | ❌ No                     |
+
+---
+
+### 🧠 **Extra Tip – Chaining Methods**
+
+You can combine these methods to make code cleaner and faster.
+
+📘 Example:
+
+```javascript
+var arr = [1, 2, 3, 4, 4, 5, 6];
+
+var result = arr
+  .filter(num => num > 2)
+  .reduce((acc, val) => acc + val, 0);
+
+console.log(result); // 18 (3+4+4+5+6)
+```
+
+✅ **Method chaining** makes code shorter and more expressive — a key JavaScript practice.
+
+---
+
+
+
+## 🎯 **JavaScript – Day 11: Practicing HOF, Callbacks & Closures**
+
+---
+
+### ⚡ **1️⃣ Recap of Key Concepts**
+
+#### **Higher-Order Function (HOF)**
+
+A function that either **accepts another function** as an argument or **returns a function** as output.
+
+📘 Example:
+
+```javascript
+function greet(callback) {
+  console.log("Welcome!");
+  callback();
+}
+
+function sayName() {
+  console.log("Nani");
+}
+
+greet(sayName);
+```
+
+✅ *Why it matters:* It helps in reusability, modularity, and asynchronous programming.
+
+---
+
+#### **Callback Function**
+
+A function **passed into another function** to be executed later.
+
+📘 Example:
+
+```javascript
+setTimeout(function() {
+  console.log("Executed after 3 seconds");
+}, 3000);
+```
+
+✅ *Real-world use:* API calls, event handling, and async operations.
+
+---
+
+#### **Closure**
+
+A closure is when an **inner function remembers variables** from its **outer scope**, even after the outer function has executed.
+
+📘 Example:
+
+```javascript
+function counter() {
+  let count = 0;
+  return function() {
+    count++;
+    console.log(count);
+  };
+}
+
+let increment = counter();
+increment(); // 1
+increment(); // 2
+```
+
+✅ *Why it matters:* Closures help maintain **private variables** and **state** between function calls.
+
+---
+
+### 🧩 **2️⃣ Function Control: Execute Only Once**
+
+Your mentor’s question was:
+
+> "Implement a function that takes a callback and executes it **only once**."
+
+This problem uses **closures** to “remember” if the function was already called — and prevent further execution.
+
+---
+
+#### 📘 Example Solution:
+
+```javascript
+function executeOnce(callback) {
+  let executed = false; // closure variable
+
+  return function() {
+    if (!executed) {
+      executed = true;
+      callback();
+    } else {
+      console.log("This function can only be executed once!");
+    }
+  };
+}
+
+// Example usage:
+function sayHello() {
+  console.log("Hello, executed only once!");
+}
+
+const runOnce = executeOnce(sayHello);
+runOnce(); // Output: Hello, executed only once!
+runOnce(); // Output: This function can only be executed once!
+```
+
+✅ **Concepts Used:**
+
+* **Callback:** `sayHello` function is passed as a callback.
+* **Closure:** Inner function remembers the variable `executed`.
+* **Control Logic:** Prevents repeated execution.
+
+---
+
+### 🕐 **3️⃣ setTimeout()**
+
+We also practiced the use of `setTimeout()` — it delays execution of a callback function.
+
+📘 Example:
+
+```javascript
+setTimeout(function() {
+  console.log("Executed after 3 seconds");
+}, 3000);
+```
+
+✅ Used for asynchronous tasks (API calls, animations, delayed execution, etc.)
+
+---
+
+### 🧠 **4️⃣ Real-World Example**
+
+A function like this is often used in:
+
+* **Form submission prevention** (avoid double-clicks)
+* **One-time initialization** (like setting up event listeners)
+* **API call throttling**
+
+---
+
+### 💡 **5️⃣ Key Takeaways**
+
+| Concept           | Description                                  | Example                 |
+| ----------------- | -------------------------------------------- | ----------------------- |
+| **HOF**           | Function that takes/returns another function | `arr.map(fn)`           |
+| **Callback**      | Function passed as argument                  | `setTimeout(fn, 3000)`  |
+| **Closure**       | Inner function remembers outer scope         | `executeOnce(callback)` |
+| **Control Logic** | Restrict repeated execution                  | Used in your task       |
+| **setTimeout()**  | Executes function after delay                | Async operations        |
+
+---
+
+✅ **Core Learning:**
+Today’s session focused on combining these concepts — **Callbacks + Closures + Logic Control** — to write smarter, reusable, and controlled code.
+
+================================================
 
