@@ -3257,3 +3257,139 @@ Today’s session focused on combining these concepts — **Callbacks + Closures
 
 ================================================
 
+## 🎯 **JavaScript – Day 12: DOM (Document Object Model) Basics**
+
+---
+
+### 📌 What is the DOM?
+
+**DOM** → *Document Object Model*
+It represents the entire HTML page as a **tree structure** of objects (nodes).
+JavaScript can use DOM to **select, change, add, or remove** elements dynamically.
+
+---
+
+### ✨ Why We Use the DOM?
+
+DOM allows us to:
+✔ Update HTML content
+✔ Change CSS styling
+✔ Respond to user actions (click, input, mouseover, scroll, etc.)
+✔ Make webpages interactive and dynamic
+
+---
+
+### 🔄 4 Steps of DOM Manipulation
+
+| Step            | Meaning             | Example                        |
+| --------------- | ------------------- | ------------------------------ |
+| 1️⃣ Select      | Get element from UI | `document.querySelector("h1")` |
+| 2️⃣ Change HTML | Modify content      | `h1.innerHTML = "Hello!"`      |
+| 3️⃣ Change CSS  | Modify styling      | `h1.style.color = "red"`       |
+| 4️⃣ Add Event   | Handle user actions | `addEventListener()`           |
+
+---
+
+### 🧩 DOM Selection
+
+#### `document.querySelector()`
+
+Used to select **the first matching element**.
+
+```javascript
+var h1 = document.querySelector("h1");
+console.log(h1);
+```
+
+---
+
+### 📝 Changing HTML
+
+```javascript
+h1.innerHTML = "Hey guys, what's up?";
+```
+
+> ❌ `innerElement` is wrong
+> ✔ Correct → `innerHTML` or `textContent`
+
+---
+
+### 🎨 Changing CSS Styles
+
+```javascript
+h1.style.color = "red";
+h1.style.backgroundColor = "green";
+```
+
+Note: CSS uses kebab-case (`background-color`),
+JS uses camelCase (`backgroundColor`)
+
+---
+
+### 🎯 Event Listener
+
+Used to run JS **when a user performs an action** (click, hover, keypress, etc.)
+
+```javascript
+h1.addEventListener("click", function() {
+  h1.innerHTML = "Welcome to DOM Concept!";
+  h1.style.color = "yellow";
+  h1.style.backgroundColor = "black";
+  console.log("Event triggered!");
+});
+```
+
+---
+
+### 🧠 Real UI Action Flow
+
+User clicks element → JS Event fires → DOM changes → UI updates
+✨ *(Dynamic behavior achieved!)*
+
+---
+
+### ⚠️ Common Mistake
+
+You wrote:
+
+```javascript
+h1.innerElement = '...'
+```
+
+❌ `innerElement` doesn’t exist
+
+✔ Use any of these instead:
+
+| Property      | What it does             |
+| ------------- | ------------------------ |
+| `innerHTML`   | Accepts text + HTML tags |
+| `textContent` | Accepts plain text only  |
+
+---
+
+### 🤓 Bonus Tip
+
+Instead of selecting element twice, reuse same variable:
+❌ Re-selecting:
+
+```javascript
+var h1 = document.querySelector("h1");
+var h = document.querySelector("h1");
+```
+
+✔ Correct:
+
+```javascript
+var h1 = document.querySelector("h1");
+```
+
+---
+
+### 🎯 Key Takeaways
+
+✔ DOM = Connects HTML & JS
+✔ We can change UI dynamically using JS
+✔ Event Listeners make websites interactive
+✔ `innerHTML`, `.style`, `.addEventListener()` are most used in UI logic
+
+---
